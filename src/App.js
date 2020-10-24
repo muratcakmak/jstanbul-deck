@@ -56,9 +56,9 @@ const template = ({ slideNumber, numberOfSlides }) => (
     <Box padding="0 1em">
       <FullScreen />
     </Box>
-    <Logo></Logo>
+    <Logo />
     <Box padding="1em">
-      {slideNumber}/{numberOfSlides}
+      {slideNumber + 1}/{numberOfSlides}
     </Box>
   </FlexBox>
 );
@@ -100,9 +100,16 @@ function App() {
         transitionEffect={fancyTransition}
       >
         <Heading>Hermes</Heading>
-        <OrderedList>Repeated Code</OrderedList>
-        <OrderedList>NPM packages for the rescue</OrderedList>
-        <OrderedList>Keeping up with 3 developers as 1 developer</OrderedList>
+        <FlexBox flexDirection="row">
+          <Image src="https://pbs.twimg.com/profile_images/1073156855621406720/O6X_6nlf_400x400.jpg"></Image>
+          <Box>
+            <OrderedList>Repeated Code</OrderedList>
+            <OrderedList>NPM packages for the rescue</OrderedList>
+            <OrderedList>
+              Keeping up with 3 developers as 1 developer
+            </OrderedList>
+          </Box>
+        </FlexBox>
         <Notes>
           During the project Hermes aka synchronous consultation we're able to
           build quickly for web thanks to the shared component between EMR and
@@ -120,7 +127,13 @@ function App() {
         transitionEffect={fancyTransition}
       >
         <Heading>EMR UI Team</Heading>
-        <OrderedList>Keeping up with 3 developers as 1 developer</OrderedList>
+        <FlexBox>
+          <OrderedList>Keeping up with 3 developers as 1 developer</OrderedList>
+          <Image
+            width="600"
+            src="https://blog.puls.com/hs-fs/hubfs/puls-iphone-stuck-on-apple-logo-updates.jpg?width=3600&name=puls-iphone-stuck-on-apple-logo-updates.jpg"
+          ></Image>
+        </FlexBox>
         <Notes>
           Hermes project, we have realized that we could do better with the
           engineering resources we have. At that time, EMR had 3 UI engineers
@@ -130,7 +143,7 @@ function App() {
         </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Problem: How could we share data layer</Heading>
+        <Heading>Problem: How could we share data layer?</Heading>
         <OrderedList>Save development hours with shared data layer</OrderedList>
         <Notes>
           EMR is a CRUD application at the core. We added video chat on top of
@@ -143,6 +156,19 @@ function App() {
           time to improve UX and do fancy/fun things
         </Notes>
       </Slide>
+      <Slide
+        backgroundColor="backgroundColor"
+        transitionEffect={fancyTransition}
+      >
+        <Heading>Two options</Heading>
+        <FlexBox flexDirection="row">
+          <Box>
+            <OrderedList>Kotlin Native</OrderedList>
+            <OrderedList>React Native Web</OrderedList>
+          </Box>
+        </FlexBox>
+        <Notes></Notes>
+      </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Kotlin Native</Heading>
         <FlexBox justifyContent="space-between">
@@ -152,17 +178,42 @@ function App() {
             src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin-logo.svg"
           ></Image>
         </FlexBox>
-        <Notes></Notes>
+        <Notes>
+          Kotlin/Native is a technology for compiling Kotlin code to native
+          binaries, which can run without a virtual machine. It is an LLVM based
+          backend for the Kotlin compiler and native implementation of the
+          Kotlin standard library. Kotlin/Native is primarily designed to allow
+          compilation for platforms where virtual machines are not desirable or
+          possible, for example, embedded devices or iOS. It solves the
+          situations when a developer needs to produce a self-contained program
+          that does not require an additional runtime or virtual machine.
+        </Notes>
       </Slide>
       {/* <Slide backgroundColor="backgroundColor">
         <Heading>How Innovation Happens</Heading>
         <Markdown>```That's cool```</Markdown>
       </Slide> */}
       <Slide backgroundColor="backgroundColor">
-        <Heading>Yarn</Heading>
+        <Heading>React Native for Web</Heading>
         <FlexBox justifyContent="space-between">
-          <Markdown>```yarn workspaces```</Markdown>
-          <Image src="https://seeklogo.com/images/Y/yarn-logo-F5E7A65FA2-seeklogo.com.png"></Image>
+          <Markdown>```React Native for Web```</Markdown>
+          <iframe
+            src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
+            style={{ height: 500, width: 600 }}
+          ></iframe>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Moving redux and redux-sagas</Heading>
+        <FlexBox verticalAlign="center">
+          <Markdown>
+            ```We have just moved all the sagas from legacy EMR to emr-clients
+            app```
+          </Markdown>
+          <iframe
+            src="https://www.typescriptlang.org/"
+            style={{ height: 500, width: 600 }}
+          ></iframe>
         </FlexBox>
       </Slide>
       <Slide backgroundColor="backgroundColor">
@@ -185,14 +236,17 @@ function App() {
           ></Image>
         </FlexBox>
       </Slide>
-
       <Slide backgroundColor="backgroundColor">
         <Heading>React Native for Web</Heading>
         <FlexBox justifyContent="space-between">
-          <Markdown>```React Native for Web```</Markdown>
+          <Box>
+            <Markdown>```Project Structure```</Markdown>
+            <Markdown>```@emr-clients name space```</Markdown>
+            <Markdown>```core/components/common```</Markdown>
+          </Box>
           <iframe
-            src="https://github.com/necolas/react-native-web"
-            style={{ height: 400, width: 400 }}
+            src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
+            style={{ height: 500, width: 600 }}
           ></iframe>
         </FlexBox>
       </Slide>
@@ -202,7 +256,7 @@ function App() {
           <Markdown>```Components```</Markdown>
           <iframe
             src="https://www.typescriptlang.org/"
-            style={{ height: 400, width: 400 }}
+            style={{ height: 500, width: 600 }}
           ></iframe>
         </FlexBox>
       </Slide>
@@ -215,7 +269,7 @@ function App() {
           </Box>
           <iframe
             src="https://www.typescriptlang.org/"
-            style={{ height: 400, width: 400 }}
+            style={{ height: 500, width: 600 }}
           ></iframe>
         </FlexBox>
       </Slide>
@@ -229,7 +283,7 @@ function App() {
           </Box>
           <iframe
             src="https://www.typescriptlang.org/"
-            style={{ height: 400, width: 400 }}
+            style={{ height: 500, width: 600 }}
           ></iframe>
         </FlexBox>
       </Slide>
@@ -247,43 +301,18 @@ function App() {
           ></iframe>
         </FlexBox>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>React Native and Web</Heading>
-        <FlexBox justifyContent="space-between">
-          <Box>
-            <Markdown>```Project Structure```</Markdown>
-            <Markdown>```@emr-clients name space```</Markdown>
-            <Markdown>```core/components/common```</Markdown>
-          </Box>
-          <iframe
-            src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
-            style={{ height: 500, width: 600 }}
-          ></iframe>
-        </FlexBox>
-      </Slide>
+
       <Slide backgroundColor="backgroundColor">
         <Heading>Styled Components</Heading>
         <FlexBox justifyContent="space-between">
           <Markdown>```Components```</Markdown>
           <iframe
             src="https://styled-components.com/"
-            style={{ height: 400, width: 400 }}
+            style={{ height: 500, width: 600 }}
           ></iframe>
         </FlexBox>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>Moving redux and redux-sagas</Heading>
-        <FlexBox verticalAlign="center">
-          <Markdown>
-            ```We have just moved all the sagas from legacy EMR to emr-clients
-            app```
-          </Markdown>
-          <iframe
-            src="https://www.typescriptlang.org/"
-            style={{ height: 400, width: 400 }}
-          ></iframe>
-        </FlexBox>
-      </Slide>
+
       <Slide backgroundColor="backgroundColor">
         <Heading>Deployments</Heading>
         <OrderedList>CircleCI</OrderedList>
@@ -306,9 +335,8 @@ function App() {
         <OrderedList>VPN</OrderedList>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Going Around</Heading>
-        <OrderedList>Adding new packages</OrderedList>
-        <OrderedList>Pathing packages</OrderedList>
+        <Heading>Working in the project</Heading>
+        <OrderedList>Adding isomorphic packages</OrderedList>
       </Slide>
     </Deck>
   );
