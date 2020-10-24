@@ -12,6 +12,8 @@ import {
   OrderedList,
   Slide,
 } from "spectacle";
+import "./index.css";
+import { ReactComponent as Logo } from "./logo.svg";
 
 const theme = {
   colors: {
@@ -20,8 +22,8 @@ const theme = {
     backgroundColor: "#d9b48e",
   },
   fonts: {
-    header: "inherit",
-    text: "inherit",
+    header: `SofiaProWeb, "Open Sans", sans-serif, Helvetica, Arial`,
+    text: `SofiaProWeb, "Open Sans", sans-serif, Helvetica, Arial`,
   },
   fontSizes: {
     header: "64px",
@@ -29,20 +31,20 @@ const theme = {
   },
 };
 
-// const transition = {
-//   from: {
-//     position: "fixed",
-//     transform: "translate(100%, 0%)",
-//   },
-//   enter: {
-//     position: "fixed",
-//     transform: "translate(0, 0%)",
-//   },
-//   leave: {
-//     position: "fixed",
-//     transform: "translate(-100%, 0%)",
-//   },
-// };
+const fancyTransition = {
+  from: {
+    position: "fixed",
+    transform: "translate(50%, 0%)",
+  },
+  enter: {
+    position: "fixed",
+    transform: "translate(0, 0%)",
+  },
+  leave: {
+    position: "fixed",
+    transform: "translate(-100%, 0%)",
+  },
+};
 
 const template = ({ slideNumber, numberOfSlides }) => (
   <FlexBox
@@ -54,6 +56,7 @@ const template = ({ slideNumber, numberOfSlides }) => (
     <Box padding="0 1em">
       <FullScreen />
     </Box>
+    <Logo></Logo>
     <Box padding="1em">
       {slideNumber}/{numberOfSlides}
     </Box>
@@ -63,7 +66,10 @@ const template = ({ slideNumber, numberOfSlides }) => (
 function App() {
   return (
     <Deck theme={theme} template={template}>
-      <Slide backgroundColor="backgroundColor">
+      <Slide
+        backgroundColor="backgroundColor"
+        transitionEffect={fancyTransition}
+      >
         <FlexBox height="100%" flexDirection="column">
           <Heading margin="0px" fontSize="150px" color="offwhite">
             EMR Monorepo
@@ -78,34 +84,80 @@ function App() {
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>EMR Monorepo</Heading>
-        <OrderedList>Idea</OrderedList>
+        <OrderedList>Problem</OrderedList>
         <OrderedList>State</OrderedList>
-        <OrderedList>Innovation</OrderedList>
+        <OrderedList>Proposal</OrderedList>
         <OrderedList>Implementation</OrderedList>
         <OrderedList>Current State</OrderedList>
+        <OrderedList>Future Plans</OrderedList>
         <Notes>
           Urql is a GraphQL client that exposes a set of React components and
           hooks.
         </Notes>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
+      <Slide
+        backgroundColor="backgroundColor"
+        transitionEffect={fancyTransition}
+      >
         <Heading>Hermes</Heading>
         <OrderedList>Repeated Code</OrderedList>
         <OrderedList>NPM packages for the rescue</OrderedList>
         <OrderedList>Keeping up with 3 developers as 1 developer</OrderedList>
+        <Notes>
+          During the project Hermes aka synchronous consultation we're able to
+          build quickly for web thanks to the shared component between EMR and
+          Store. This was partially thanks to github npm registry. And my
+          attempt to have a uniform repository between EMR and CX which I
+          started to work on first. I am briefly touching on Cactus. Cactus is a
+          generally purpose component library shared between Store and EMR at
+          the time being. I wanted to make it general purpose component library
+          but seems like creating infrastructure between store and EMR is harder
+          than doing your own implementation. So we kept it
+        </Notes>
+      </Slide>
+      <Slide
+        backgroundColor="backgroundColor"
+        transitionEffect={fancyTransition}
+      >
+        <Heading>EMR UI Team</Heading>
+        <OrderedList>Keeping up with 3 developers as 1 developer</OrderedList>
+        <Notes>
+          Hermes project, we have realized that we could do better with the
+          engineering resources we have. At that time, EMR had 3 UI engineers
+          and 1 iOS engineer. So each feature was repeated in the mobile and the
+          web. Mobile was also iOS only. It wasn't the ideal way to spend energy
+          so I started to think about a solution
+        </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Why bother?</Heading>
+        <Heading>Problem: How could we share data layer</Heading>
         <OrderedList>Save development hours with shared data layer</OrderedList>
+        <Notes>
+          EMR is a CRUD application at the core. We added video chat on top of
+          CRUD application. Most of the we read and display data on the
+          frontend. If user does any add or update to the database we also
+          render it on the UI. It doesn't matter it is an Apple Watch app,
+          Oculus VR App, or Apple Glass app(Coming soon). What it means is if we
+          could cross-platform data layer, we would be able to save enourmous
+          eng time. And eng time means efficiency and we could spend remaining
+          time to improve UX and do fancy/fun things
+        </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>How could we share data layer</Heading>
-        <OrderedList>Save development hours with shared data layer</OrderedList>
+        <Heading>Kotlin Native</Heading>
+        <FlexBox justifyContent="space-between">
+          <Markdown>```Kotlin Native```</Markdown>
+          <Image
+            style={{ height: 500 }}
+            src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin-logo.svg"
+          ></Image>
+        </FlexBox>
+        <Notes></Notes>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
+      {/* <Slide backgroundColor="backgroundColor">
         <Heading>How Innovation Happens</Heading>
         <Markdown>```That's cool```</Markdown>
-      </Slide>
+      </Slide> */}
       <Slide backgroundColor="backgroundColor">
         <Heading>Yarn</Heading>
         <FlexBox justifyContent="space-between">
@@ -133,16 +185,7 @@ function App() {
           ></Image>
         </FlexBox>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>Kotlin Native</Heading>
-        <FlexBox justifyContent="space-between">
-          <Markdown>```Kotlin Native```</Markdown>
-          <Image
-            style={{ height: 500 }}
-            src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin-logo.svg"
-          ></Image>
-        </FlexBox>
-      </Slide>
+
       <Slide backgroundColor="backgroundColor">
         <Heading>React Native for Web</Heading>
         <FlexBox justifyContent="space-between">
