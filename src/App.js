@@ -14,12 +14,14 @@ import {
 } from "spectacle";
 import "./index.css";
 import { ReactComponent as Logo } from "./logo.svg";
+import hermes from "./assets/hermes.gif";
 
 const theme = {
   colors: {
     primary: "black",
     secondary: "black",
     backgroundColor: "#d9b48e",
+    backgroundColorSecondary: "#e4eae6",
   },
   fonts: {
     header: `SofiaProWeb, "Open Sans", sans-serif, Helvetica, Arial`,
@@ -101,13 +103,10 @@ function App() {
       >
         <Heading>Hermes</Heading>
         <FlexBox flexDirection="row">
-          <Image src="https://pbs.twimg.com/profile_images/1073156855621406720/O6X_6nlf_400x400.jpg"></Image>
+          <Image src={hermes}></Image>
           <Box>
             <OrderedList>Repeated Code</OrderedList>
             <OrderedList>NPM packages for the rescue</OrderedList>
-            <OrderedList>
-              Keeping up with 3 developers as 1 developer
-            </OrderedList>
           </Box>
         </FlexBox>
         <Notes>
@@ -121,6 +120,19 @@ function App() {
           but seems like creating infrastructure between store and EMR is harder
           than doing your own implementation. So we kept it
         </Notes>
+      </Slide>
+      <Slide backgroundColor="backgroundColorSecondary">
+        <Heading>TIL: Naming Convention</Heading>
+        <OrderedList>EMR: Electronic medical records</OrderedList>
+        <OrderedList>EMR UI: Legacy EMR</OrderedList>
+        <OrderedList>EMR Clients: Also known as monorepo</OrderedList>
+        <OrderedList>Web: Web</OrderedList>
+        <OrderedList>
+          Native: iOS and Android. In React Native context, they refer as native
+        </OrderedList>
+        <FlexBox justifyContent="space-between">
+          <Notes></Notes>
+        </FlexBox>
       </Slide>
       <Slide
         backgroundColor="backgroundColor"
@@ -160,11 +172,12 @@ function App() {
         backgroundColor="backgroundColor"
         transitionEffect={fancyTransition}
       >
-        <Heading>Two options</Heading>
+        <Heading>Three options</Heading>
         <FlexBox flexDirection="row">
           <Box>
             <OrderedList>Kotlin Native</OrderedList>
             <OrderedList>React Native Web</OrderedList>
+            <OrderedList>Flutter</OrderedList>
           </Box>
         </FlexBox>
         <Notes></Notes>
@@ -172,7 +185,6 @@ function App() {
       <Slide backgroundColor="backgroundColor">
         <Heading>Kotlin Native</Heading>
         <FlexBox justifyContent="space-between">
-          <Markdown>```Kotlin Native```</Markdown>
           <Image
             style={{ height: 500 }}
             src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin-logo.svg"
@@ -195,26 +207,61 @@ function App() {
       </Slide> */}
       <Slide backgroundColor="backgroundColor">
         <Heading>React Native for Web</Heading>
-        <FlexBox justifyContent="space-between">
-          <Markdown>```React Native for Web```</Markdown>
+        <FlexBox verticalAlign="center">
           <iframe
             src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
             style={{ height: 500, width: 600 }}
           ></iframe>
+          <Notes>
+            I heard first about React Native Web with this blog post. I was
+            doing some research on my own after working consumer app. I was like
+            oh boy this is so cool to work on mobile apps. Is there any way to
+            combine components across the board. React's motto is learn once
+            apply every where and Java's motto is `write once and run anywhere`.
+            How about altering React motto to match with Java's claim? It seemed
+            like it is possible thanks to some difficult metro/webpack bundler.
+            This post explains how you could accomplish it.
+          </Notes>
         </FlexBox>
+      </Slide>
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Flutter</Heading>
+        <FlexBox verticalAlign="center">
+          <iframe
+            src="https://flutter.dev/"
+            style={{ height: 500, width: 600 }}
+          ></iframe>
+        </FlexBox>
+        <Notes>
+          Flutter is cool but it requires to learn new language called dart and
+          new ecosystem, their twilio support wasn't solid back then
+        </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Moving redux and redux-sagas</Heading>
         <FlexBox verticalAlign="center">
-          <Markdown>
-            ```We have just moved all the sagas from legacy EMR to emr-clients
-            app```
-          </Markdown>
+          <Heading>
+            We have just moved all the sagas from legacy EMR to emr-clients app
+          </Heading>
           <iframe
-            src="https://www.typescriptlang.org/"
+            src="https://redux-saga.js.org/"
             style={{ height: 500, width: 600 }}
           ></iframe>
         </FlexBox>
+        <Notes>
+          After creating the project, I was able to render cross platform login
+          page which was really cool for me but it wasn't enough. I wanted to
+          have proof of concept and that's why I want something quick. I went to
+          EMR UI app, copied all data layer and added it to my POC project. It
+          didn't work for sure. EMR UI was using ES5 style imports and export
+          which you can't use with Metro bundler. So I was like a mac who runs
+          90% of memory and CPU for 3 hours. It took me literally 3 hours 11
+          minutes to get it working once it is working I knew that we're into
+          something big. This was big since we were able to accomplish the first
+          and foremost goal instantaniously. We have data layer which includes
+          network calls, their side effects, sagas, and redux store inherited
+          from legacy EMR. BOOM BOOM BOOM
+        </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Lerna</Heading>
@@ -224,6 +271,11 @@ function App() {
             style={{ height: 500 }}
             src="https://user-images.githubusercontent.com/645641/79596653-38f81200-80e1-11ea-98cd-1c6a3bb5de51.png"
           ></Image>
+          <Notes>
+            Lerna is tool used to make monorepos. It was before Yarn workspaces.
+            It still plays well with yarn workspaces. If you want to pick and
+            publish one of the packages, lerna is way to go in monorepos.
+          </Notes>
         </FlexBox>
       </Slide>
       <Slide backgroundColor="backgroundColor">
@@ -301,7 +353,6 @@ function App() {
           ></iframe>
         </FlexBox>
       </Slide>
-
       <Slide backgroundColor="backgroundColor">
         <Heading>Styled Components</Heading>
         <FlexBox justifyContent="space-between">
@@ -312,7 +363,7 @@ function App() {
           ></iframe>
         </FlexBox>
       </Slide>
-
+      {/* Deployments */}
       <Slide backgroundColor="backgroundColor">
         <Heading>Deployments</Heading>
         <OrderedList>CircleCI</OrderedList>
@@ -328,6 +379,7 @@ function App() {
         <OrderedList>Tap Collector</OrderedList>
         <OrderedList>Instabug</OrderedList>
       </Slide>
+      {/* Security */}
       <Slide backgroundColor="backgroundColor">
         <Heading>Security</Heading>
         <OrderedList>FaceID, TouchID, Biometric Auth</OrderedList>
