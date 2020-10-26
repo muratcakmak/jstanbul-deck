@@ -543,11 +543,12 @@ function App() {
           <OrderedList>Notorious LGTM</OrderedList>
         </OrderedList>
         <OrderedList>Preview Links</OrderedList>
+        <Notes>notorious deployment time</Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Bug Reports</Heading>
-        <OrderedList>Tap Collector</OrderedList>
-        <OrderedList>Instabug</OrderedList>
+        <OrderedList>Web: Tap Collector</OrderedList>
+        <OrderedList>Mobile: Instabug</OrderedList>
       </Slide>
       {/* Security */}
       <Slide backgroundColor="backgroundColor">
@@ -555,6 +556,21 @@ function App() {
         <OrderedList>FaceID, TouchID, Biometric Auth</OrderedList>
         <OrderedList>MFA</OrderedList>
         <OrderedList>VPN</OrderedList>
+        <Notes>
+          Behind vpm for internal users --- two vpn --- the fact that internal
+          users have @forhims.com and clinicians are not. If we they have
+          @forhims.com healthcare providers, telemedicine company (faciliator).
+          Single sign on. p81 it is either signle signon or indepedently
+          managed.com. 300 simultaneous. east of missipisi, west of missispi.
+          what albert and petr, they close it geographically binded. clinician
+          endpoint nordVPN for p81. --------------- --- pound check doctors
+          change their password, database for leaked passwords, we increase the
+          requirement of length and we got rid of that, when you change your
+          password, it doesn't allow you to add it --------------- backend for
+          vpn, downlaod the profile trust it. p81, downloading and independent
+          app and seems to be stable. that's looking forward put the backend
+          behind the VPN --
+        </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>THE END.</Heading>
