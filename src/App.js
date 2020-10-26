@@ -75,10 +75,7 @@ const template = ({ slideNumber, numberOfSlides }) => (
 function App() {
   return (
     <Deck theme={theme} template={template}>
-      <Slide
-        backgroundColor="backgroundColor"
-        transitionEffect={fancyTransition}
-      >
+      <Slide backgroundColor="backgroundColor">
         <FlexBox height="100%" flexDirection="column">
           <Heading margin="0px" fontSize="150px" color="offwhite">
             EMR Monorepo
@@ -104,10 +101,7 @@ function App() {
           hooks.
         </Notes>
       </Slide>
-      <Slide
-        backgroundColor="backgroundColor"
-        transitionEffect={fancyTransition}
-      >
+      <Slide backgroundColor="backgroundColor">
         <Heading>Hermes</Heading>
         <FlexBox flexDirection="row">
           <Image src={hermes}></Image>
@@ -128,10 +122,7 @@ function App() {
           than doing your own implementation. So we kept it
         </Notes>
       </Slide>
-      <Slide
-        backgroundColor="backgroundColor"
-        transitionEffect={fancyTransition}
-      >
+      <Slide backgroundColor="backgroundColor">
         <Heading>Cactus</Heading>
         <FlexBox verticalAlign="center">
           <Image width="1200" src={cactus}></Image>
@@ -171,10 +162,7 @@ function App() {
           </Notes>
         </FlexBox>
       </Slide>
-      <Slide
-        backgroundColor="backgroundColor"
-        transitionEffect={fancyTransition}
-      >
+      <Slide backgroundColor="backgroundColor">
         <Heading>EMR UI Team</Heading>
         <FlexBox>
           <OrderedList>Keeping up with 3 developers as 1 developer</OrderedList>
@@ -219,10 +207,7 @@ function App() {
           </Box>
         </FlexBox>
       </Slide>
-      <Slide
-        backgroundColor="backgroundColor"
-        transitionEffect={fancyTransition}
-      >
+      <Slide backgroundColor="backgroundColor">
         <Heading>Three options</Heading>
         <FlexBox flexDirection="row">
           <Box>
@@ -292,7 +277,7 @@ function App() {
       </Slide>
 
       {/* Actual work */}
-      <Slide backgroundColor="bgSex">
+      <Slide backgroundColor="bgSex" transitionEffect={fancyTransition}>
         <Heading>Remember</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
