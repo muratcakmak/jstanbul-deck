@@ -15,3 +15,17 @@ code {
 html {
   font-family: SofiaProWeb, "Open Sans", sans-serif, Helvetica, Arial;
 }
+
+.ComponentStyle {
+  background: radial-gradient(
+    ellipse farthest-corner at 45px 45px,
+    #00ffff 0%,
+    rgba(0, 0, 255, 0) 50%,
+    #0000ff 95%
+  );
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

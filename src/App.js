@@ -277,8 +277,11 @@ function App() {
       </Slide>
 
       {/* Actual work */}
-      <Slide backgroundColor="bgSex" transitionEffect={fancyTransition}>
-        <Heading>Remember</Heading>
+      <Slide
+        transitionEffect={fancyTransition}
+        backgroundImage={"linear-gradient(to right, #8BB9AE, #C8DEE7)"}
+      >
+        <Heading>Remember?</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
             <OrderedList>DX and efficiency</OrderedList>
@@ -508,11 +511,35 @@ function App() {
       <Slide backgroundColor="bgSex">
         <Heading>Styled Components</Heading>
         <FlexBox justifyContent="space-between">
-          <Markdown>```Components```</Markdown>
+          <Markdown>Components</Markdown>
           <iframe
-            src="https://styled-components.com/"
-            style={{ height: 500, width: 600 }}
+            width="560"
+            height="515"
+            src="https://www.youtube.com/embed/gvGW7sV50yU?autoplay=1&rel=0&showinfo=0&controls=0&autohide=1&modestbranding=1&amp;wmode=transparent"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
           ></iframe>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>Styled Components (continued)</Heading>
+        <FlexBox justifyContent="space-between">
+          <Box>
+            <UnorderedList>Dark/Light Theme</UnorderedList>
+            <UnorderedList>Spacing</UnorderedList>
+            <UnorderedList>Colors</UnorderedList>
+          </Box>
+          <Box>
+            <iframe
+              width="560"
+              height="515"
+              src="https://www.youtube.com/embed/Fegz4yCFxAk?autoplay=1&rel=0&showinfo=0&controls=0&autohide=1&modestbranding=1&amp;wmode=transparent"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </Box>
         </FlexBox>
       </Slide>
 
