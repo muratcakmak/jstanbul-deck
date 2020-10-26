@@ -89,13 +89,13 @@ function App() {
         </FlexBox>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>EMR Monorepo</Heading>
+        <Heading>Outline</Heading>
         <OrderedList>Problem</OrderedList>
         <OrderedList>State</OrderedList>
         <OrderedList>Proposal</OrderedList>
         <OrderedList>Implementation</OrderedList>
         <OrderedList>Current State</OrderedList>
-        <OrderedList>Future Plans</OrderedList>
+        <OrderedList>Questions</OrderedList>
         <Notes>
           Urql is a GraphQL client that exposes a set of React components and
           hooks.
@@ -197,10 +197,15 @@ function App() {
         <Heading>Other Goals</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
+            <OrderedList>At least 80%</OrderedList>
             <OrderedList>Type safety</OrderedList>
+            <OrderedList>Hooks</OrderedList>
             <OrderedList>CSS in JS</OrderedList>
-            <OrderedList>Solid Linter rules</OrderedList>
             <OrderedList>Solid Project Architecture</OrderedList>
+            <OrderedList>
+              Stellar developer experience and efficiency
+            </OrderedList>
+            <OrderedList>Linter rules</OrderedList>
           </Box>
           <Box>
             <Image src="https://media.giphy.com/media/26FL4BhNXmo8PNLYk/giphy.gif"></Image>
@@ -257,8 +262,8 @@ function App() {
             combine components across the board. React's motto is learn once
             apply every where and Java's motto is `write once and run anywhere`.
             How about altering React motto to match with Java's claim? It seemed
-            like it is possible thanks to some difficult metro/webpack bundler.
-            This post explains how you could accomplish it.
+            like it is possible thanks to some difficult metro/webpack bundler
+            configurations. This post explains how you could accomplish it.
           </Notes>
         </FlexBox>
       </Slide>
@@ -284,14 +289,18 @@ function App() {
         <Heading>Remember?</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
-            <OrderedList>DX and efficiency</OrderedList>
+            <OrderedList>At least 80%</OrderedList>
             <OrderedList>Type safety</OrderedList>
+            <OrderedList>Hooks</OrderedList>
             <OrderedList>CSS in JS</OrderedList>
-            <OrderedList>Solid Linter rules</OrderedList>
             <OrderedList>Solid Project Architecture</OrderedList>
+            <OrderedList>
+              Stellar developer experience and efficiency
+            </OrderedList>
+            <OrderedList>Linter rules</OrderedList>
           </Box>
           <Box>
-            <Image src="https://media.giphy.com/media/26FL4BhNXmo8PNLYk/giphy.gif"></Image>
+            <Image src="https://media.giphy.com/media/PnnIEAOjAgM85sy5Om/giphy.gif"></Image>
           </Box>
         </FlexBox>
       </Slide>
@@ -303,7 +312,6 @@ function App() {
               Cost-effective & code reuse & performance
             </UnorderedList>
             <UnorderedList>Reusable Components</UnorderedList>
-            <UnorderedList>Superior Developer Experience</UnorderedList>
           </Box>
           <Box>
             <iframe
@@ -336,10 +344,10 @@ function App() {
         <Heading>React Native</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
+            <UnorderedList>Superior Developer Experience</UnorderedList>
             <UnorderedList>Live reload and hot reload</UnorderedList>
             <UnorderedList>React Similar Architecture</UnorderedList>
             <UnorderedList>Reusable Components</UnorderedList>
-            <UnorderedList>Superior Developer Experience</UnorderedList>
           </Box>
           <Box>
             <iframe
@@ -362,7 +370,11 @@ function App() {
       <Slide backgroundColor="bgSex">
         <Heading>React Native for Web</Heading>
         <FlexBox justifyContent="space-between">
-          <Box></Box>
+          <Box>
+            <UnorderedList>React Native API on the Web</UnorderedList>
+            <UnorderedList>{`<View /> instead of <div />`}</UnorderedList>
+            <UnorderedList>{`<Text /> instead of <h1 />`}</UnorderedList>
+          </Box>
           <iframe
             src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
             style={{ height: 500, width: 600 }}
@@ -406,6 +418,7 @@ function App() {
           <Box>
             <UnorderedList>React Router Dom</UnorderedList>
             <UnorderedList>React Navigation</UnorderedList>
+            <UnorderedList>useNavigation hook FTW</UnorderedList>
           </Box>
           <Box>
             <iframe
@@ -438,18 +451,30 @@ function App() {
           </Quote>
 
           <Notes>
-            Isomorphism is a very general concept that appears in several areas
-            of mathematics. The word derives from the Greek iso, meaning
-            "equal," and morphosis, meaning "to form" or "to shape." Formally,
-            an isomorphism is bijective morphism. Informally, an isomorphism is
-            a map that preserves sets and relations among elements. In this
-            context, we call npm packages which can work in both native and web
-            as isomorphic packages. Not all the packages have this spec so we
-            should do due diligence when we want to introduce a package.
-            packages/web/config-overrides.js has many examples on how you can
-            introduce metro based packages to webpack based configurations
+            As I told you earlier, React Native web supports react native api
+            which includes View and Text. In order to have them on the web, we
+            have specify it on our webpack config file. Informally, an
+            isomorphism is a map that preserves sets and relations among
+            elements. In this context, we call npm packages which can work in
+            both native and web as isomorphic packages. Not all the packages
+            have this spec so we should do due diligence when we want to
+            introduce a package. packages/web/config-overrides.js has many
+            examples on how you can introduce metro based packages to webpack
+            based configurations
           </Notes>
         </FlexBox>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>Patching NPM Packages</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
+          <Box>
+            <iframe
+              src="https://www.omc345.com/patch/"
+              style={{ height: 500, width: 600 }}
+            ></iframe>
+          </Box>
+        </FlexBox>
+        <Notes></Notes>
       </Slide>
       <Slide backgroundColor="bgSex">
         <Heading>Babel vs Metro</Heading>
@@ -488,20 +513,74 @@ function App() {
         <Heading>Monorepo Architecture</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
-            <Markdown>```Project Structure```</Markdown>
-            <Markdown>```@emr-clients namespace```</Markdown>
-            <Markdown>```core/components/common```</Markdown>
+            <Markdown>```@emr-clients```</Markdown>
+            <OrderedList>./common</OrderedList>
+            <OrderedList>./components</OrderedList>
+            <OrderedList>./core</OrderedList>
+            <OrderedList>mobile</OrderedList>
+            <OrderedList>web</OrderedList>
+            <OrderedList>assets</OrderedList>
+          </Box>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>@emr-clients/components</Heading>
+        <FlexBox justifyContent="space-between">
+          <Box>
+            <OrderedList>{`From <Button> to <Modal>`}</OrderedList>
+            <OrderedList>{`<Calendar> component was the most nagging`}</OrderedList>
+            <OrderedList>{`There is some atomic components and also moleculer component`}</OrderedList>
+          </Box>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>@emr-clients/core</Heading>
+        <FlexBox justifyContent="space-between">
+          <Box>
+            <OrderedList>{`Business logic`}</OrderedList>
+            <OrderedList>{`Pretty much whole application`}</OrderedList>
           </Box>
         </FlexBox>
       </Slide>
       <Slide backgroundColor="bgSex">
         <Heading>Ducks</Heading>
-        <FlexBox justifyContent="space-between">
-          <Box>
-            <Markdown>```Project Structure```</Markdown>
-            <Markdown>```@emr-clients name space```</Markdown>
-            <Markdown>```core/components/common```</Markdown>
+        <FlexBox verticalAlign="center">
+          <Box marginTop={-40}>
+            <blockquote class="twitter-tweet">
+              <p lang="en" dir="ltr">
+                Sttooooop telling people to organize their apps like:
+                <br />
+                <br />
+                /components/
+                <br /> Feature
+                <br />
+                /utils/
+                <br /> feature
+                <br />
+                <br />
+                Every company has to undo this shit at some point when it gets
+                impossible to manage and turn it into:
+                <br />
+                <br />
+                /feature/
+                <br /> Component
+                <br /> util
+                <br />
+                /feature/
+                <br /> Component
+                <br /> util
+              </p>
+              &mdash; Jamie Kyle (@buildsghost){" "}
+              <a href="https://twitter.com/buildsghost/status/1308837176814206977?ref_src=twsrc%5Etfw">
+                September 23, 2020
+              </a>
+            </blockquote>
           </Box>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>Ducks (continued)</Heading>
+        <FlexBox justifyContent="space-between">
           <iframe
             src="https://www.freecodecamp.org/news/scaling-your-redux-app-with-ducks-6115955638be/"
             style={{ height: 500, width: 600 }}
@@ -547,15 +626,19 @@ function App() {
 
       {/* Deployments */}
       <Slide backgroundColor="backgroundColor">
-        <Heading>Deployments</Heading>
+        <Heading>Web Deployments</Heading>
         <OrderedList>CircleCI</OrderedList>
-        <OrderedList>Bitrise</OrderedList>
         <OrderedList>
           Github Actions <OrderedList>Running tests</OrderedList>
           <OrderedList>Notorious LGTM</OrderedList>
         </OrderedList>
         <OrderedList>Preview Links</OrderedList>
         <Notes>notorious deployment time</Notes>
+      </Slide>
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Mobile Deployments</Heading>
+        <OrderedList>Codepush - OTA</OrderedList>
+        <OrderedList>Bitrise</OrderedList>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Bug Reports</Heading>
@@ -585,8 +668,17 @@ function App() {
         </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>THE END.</Heading>
-        <OrderedList>Questions?</OrderedList>
+        <Heading>THE END</Heading>
+        <FlexBox verticalAlign="center">
+          <iframe
+            src="https://giphy.com/embed/xT5LMB2WiOdjpB7K4o"
+            width="480"
+            height="362"
+            frameBorder="0"
+            class="giphy-embed"
+            allowFullScreen
+          ></iframe>
+        </FlexBox>
       </Slide>
     </Deck>
   );
