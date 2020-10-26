@@ -14,6 +14,19 @@ import {
   Slide,
   Quote,
 } from "spectacle";
+import {
+  TwitterTimelineEmbed,
+  TwitterShareButton,
+  TwitterFollowButton,
+  TwitterHashtagButton,
+  TwitterMentionButton,
+  TwitterTweetEmbed,
+  TwitterMomentShare,
+  TwitterDMButton,
+  TwitterVideoEmbed,
+  TwitterOnAirButton,
+} from "react-twitter-embed";
+
 import "./index.css";
 import { ReactComponent as Logo } from "./logo.svg";
 import hermes from "./assets/hermes.gif";
@@ -80,18 +93,21 @@ function App() {
           <Heading margin="0px" fontSize="150px" color="offwhite">
             EMR Monorepo
           </Heading>
-          <Heading margin="0px" fontSize="h2">
-            Oguzhan Murat Cakmak
-          </Heading>
+          <FlexBox>
+            <Heading margin="0px" fontSize="h2">
+              Oguzhan Murat Cakmak
+            </Heading>
+          </FlexBox>
           <Heading margin="0px 32px" fontSize="h3" color="grey">
             Monorepo, facelift, refreshed...
           </Heading>
+          <TwitterFollowButton screenName={"omc345"} />
         </FlexBox>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Outline</Heading>
         <OrderedList>Problem</OrderedList>
-        <OrderedList>State</OrderedList>
+        <OrderedList>Opportunity</OrderedList>
         <OrderedList>Proposal</OrderedList>
         <OrderedList>Implementation</OrderedList>
         <OrderedList>Current State</OrderedList>
@@ -192,6 +208,11 @@ function App() {
           eng time. And eng time means efficiency and we could spend remaining
           time to improve UX and do fancy/fun things
         </Notes>
+      </Slide>
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Opportunity: Facelift</Heading>
+        <OrderedList>Redesigning the EMR with actual `Designers`</OrderedList>
+        <Notes>Riley & Bek</Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Other Goals</Heading>
@@ -546,41 +567,13 @@ function App() {
         <Heading>Ducks</Heading>
         <FlexBox verticalAlign="center">
           <Box marginTop={-40}>
-            <blockquote class="twitter-tweet">
-              <p lang="en" dir="ltr">
-                Sttooooop telling people to organize their apps like:
-                <br />
-                <br />
-                /components/
-                <br /> Feature
-                <br />
-                /utils/
-                <br /> feature
-                <br />
-                <br />
-                Every company has to undo this shit at some point when it gets
-                impossible to manage and turn it into:
-                <br />
-                <br />
-                /feature/
-                <br /> Component
-                <br /> util
-                <br />
-                /feature/
-                <br /> Component
-                <br /> util
-              </p>
-              &mdash; Jamie Kyle (@buildsghost){" "}
-              <a href="https://twitter.com/buildsghost/status/1308837176814206977?ref_src=twsrc%5Etfw">
-                September 23, 2020
-              </a>
-            </blockquote>
+            <TwitterTweetEmbed tweetId="1308837176814206977" />
           </Box>
         </FlexBox>
       </Slide>
       <Slide backgroundColor="bgSex">
         <Heading>Ducks (continued)</Heading>
-        <FlexBox justifyContent="space-between">
+        <FlexBox verticalAlign="center">
           <iframe
             src="https://www.freecodecamp.org/news/scaling-your-redux-app-with-ducks-6115955638be/"
             style={{ height: 500, width: 600 }}
