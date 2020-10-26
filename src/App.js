@@ -10,18 +10,25 @@ import {
   Markdown,
   Notes,
   OrderedList,
+  UnorderedList,
   Slide,
+  Quote,
 } from "spectacle";
 import "./index.css";
 import { ReactComponent as Logo } from "./logo.svg";
 import hermes from "./assets/hermes.gif";
+import cactus from "./assets/cactus.png";
 
 const theme = {
   colors: {
     primary: "black",
     secondary: "black",
+    backgroundColorOffbrand: "#EEE2D6",
+    backgroundColorAlt: "#D8A285",
     backgroundColor: "#d9b48e",
-    backgroundColorSecondary: "#e4eae6",
+    bgWell: "#8BB9AE",
+    bgSex: "#C8DEE7",
+    bgSexAlt: "#e4eae6",
   },
   fonts: {
     header: `SofiaProWeb, "Open Sans", sans-serif, Helvetica, Arial`,
@@ -121,7 +128,27 @@ function App() {
           than doing your own implementation. So we kept it
         </Notes>
       </Slide>
-      <Slide backgroundColor="backgroundColorSecondary">
+      <Slide
+        backgroundColor="backgroundColor"
+        transitionEffect={fancyTransition}
+      >
+        <Heading>Cactus</Heading>
+        <FlexBox verticalAlign="center">
+          <Image width="1200" src={cactus}></Image>
+        </FlexBox>
+        <Notes>
+          During the project Hermes aka synchronous consultation we're able to
+          build quickly for web thanks to the shared component between EMR and
+          Store. This was partially thanks to github npm registry. And my
+          attempt to have a uniform repository between EMR and CX which I
+          started to work on first. I am briefly touching on Cactus. Cactus is a
+          generally purpose component library shared between Store and EMR at
+          the time being. I wanted to make it general purpose component library
+          but seems like creating infrastructure between store and EMR is harder
+          than doing your own implementation. So we kept it
+        </Notes>
+      </Slide>
+      <Slide backgroundColor="bgSex">
         <Heading>TIL: Naming Convention</Heading>
         <OrderedList>EMR: Electronic medical records</OrderedList>
         <OrderedList>EMR UI: Legacy EMR</OrderedList>
@@ -131,7 +158,17 @@ function App() {
           Native: iOS and Android. In React Native context, they refer as native
         </OrderedList>
         <FlexBox justifyContent="space-between">
-          <Notes></Notes>
+          <Notes>
+            We have a unique naming in the web technologies. I learned iOS as
+            iOS development back in the time I was doing only iOS dev. It turned
+            out that they call it native in web terminology. Native applications
+            are using only tools provided by operating system vendors such as
+            Apple and Google in this case. What cross-platform applications aims
+            is to have a one code base to rule them all. It is economically and
+            technically ambitions goal and you have to do some trade-offs. Most
+            of the cross-platform applications are not solid due to the need of
+            refinements.
+          </Notes>
         </FlexBox>
       </Slide>
       <Slide
@@ -168,6 +205,20 @@ function App() {
           time to improve UX and do fancy/fun things
         </Notes>
       </Slide>
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Other Goals</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
+          <Box>
+            <OrderedList>Type safety</OrderedList>
+            <OrderedList>CSS in JS</OrderedList>
+            <OrderedList>Solid Linter rules</OrderedList>
+            <OrderedList>Solid Project Architecture</OrderedList>
+          </Box>
+          <Box>
+            <Image src="https://media.giphy.com/media/26FL4BhNXmo8PNLYk/giphy.gif"></Image>
+          </Box>
+        </FlexBox>
+      </Slide>
       <Slide
         backgroundColor="backgroundColor"
         transitionEffect={fancyTransition}
@@ -201,17 +252,19 @@ function App() {
           that does not require an additional runtime or virtual machine.
         </Notes>
       </Slide>
-      {/* <Slide backgroundColor="backgroundColor">
-        <Heading>How Innovation Happens</Heading>
-        <Markdown>```That's cool```</Markdown>
-      </Slide> */}
+      {/* Background */}
       <Slide backgroundColor="backgroundColor">
-        <Heading>React Native for Web</Heading>
-        <FlexBox verticalAlign="center">
-          <iframe
-            src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
-            style={{ height: 500, width: 600 }}
-          ></iframe>
+        <Heading>React Native/React Native for Web</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
+          <Box>
+            <UnorderedList>Monorepo</UnorderedList>
+          </Box>
+          <Box>
+            <iframe
+              src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
+              style={{ height: 500, width: 600 }}
+            ></iframe>
+          </Box>
           <Notes>
             I heard first about React Native Web with this blog post. I was
             doing some research on my own after working consumer app. I was like
@@ -237,16 +290,112 @@ function App() {
           new ecosystem, their twilio support wasn't solid back then
         </Notes>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>Moving redux and redux-sagas</Heading>
-        <FlexBox verticalAlign="center">
-          <Heading>
-            We have just moved all the sagas from legacy EMR to emr-clients app
-          </Heading>
+
+      {/* Actual work */}
+      <Slide backgroundColor="bgSex">
+        <Heading>Remember</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
+          <Box>
+            <OrderedList>DX and efficiency</OrderedList>
+            <OrderedList>Type safety</OrderedList>
+            <OrderedList>CSS in JS</OrderedList>
+            <OrderedList>Solid Linter rules</OrderedList>
+            <OrderedList>Solid Project Architecture</OrderedList>
+          </Box>
+          <Box>
+            <Image src="https://media.giphy.com/media/26FL4BhNXmo8PNLYk/giphy.gif"></Image>
+          </Box>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>React Native</Heading>
+        <FlexBox justifyContent="space-between">
+          <Box>
+            <UnorderedList>
+              Cost-effective & code reuse & performance
+            </UnorderedList>
+            <UnorderedList>Reusable Components</UnorderedList>
+            <UnorderedList>Superior Developer Experience</UnorderedList>
+          </Box>
+          <Box>
+            <iframe
+              style={{ height: 500, width: 600 }}
+              src="https://reactnative.dev/"
+            ></iframe>
+          </Box>
+        </FlexBox>
+        <Notes>
+          Pretty cool technology. Developed at Facebook for their most
+          downloaded iOS app in the universe. Their main goal was to increase
+          developer productivity. They first announced it for iOS. and build
+          Android later. Historically, iOS first so they have solid iOS support.
+          Most of the industry needs CRUD applications if they are not game or
+          XR(x reality, AR, VR, MX(mixed reality) or everything in between).
+          Airbnb was the first adapter of React and they proved that React has
+          capacity to be used in big projects. They adopted react native as
+          well. Then removed it because it wasn't good for their use case. We
+          don't know for sure but Facebook Marketplace is purely written in
+          React Native. Since React Native is using declarative syntax of React
+          it has smooth onboarding for people coming from web development ---
+          React Native provides you the code reuse service for deployment of
+          code on two different platforms such as iOS & Android. Because of code
+          reuse service react-native saves up to 40% of the total development
+          cost.
+          https://shivlab.com/blog/top-features-benefits-of-react-native-in-2020/
+        </Notes>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>React Native</Heading>
+        <FlexBox justifyContent="space-between">
+          <Box>
+            <UnorderedList>Live reload and hot reload</UnorderedList>
+            <UnorderedList>React Similar Architecture</UnorderedList>
+            <UnorderedList>Reusable Components</UnorderedList>
+            <UnorderedList>Superior Developer Experience</UnorderedList>
+          </Box>
+          <Box>
+            <iframe
+              style={{ height: 500, width: 600 }}
+              src="https://reactnative.dev/"
+            ></iframe>
+          </Box>
+        </FlexBox>
+        <Notes>
+          -- Live reload provides you the service of reading & compiling a file
+          that can be modified by developers for presenting in front of a
+          simulator. It can also reload the app on its own from the initial
+          stage. Live reload can enable you to see the result of any recent
+          changing to the programming. Live reload will provide you with a
+          two-screen service so that on one you can modify the code and see the
+          result on the other screen. --- Since we are pretty much React shop,
+          it is pretty big selling point in our organization
+        </Notes>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>React Native for Web</Heading>
+        <FlexBox justifyContent="space-between">
+          <Box></Box>
           <iframe
-            src="https://redux-saga.js.org/"
+            src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
             style={{ height: 500, width: 600 }}
           ></iframe>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>Moving redux and redux-sagas</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-arojnd">
+          <Box>
+            <UnorderedList>
+              We have just moved all the sagas from legacy EMR to emr-clients
+              app
+            </UnorderedList>
+          </Box>
+          <Box>
+            <iframe
+              src="https://redux-saga.js.org/"
+              style={{ height: 500, width: 600 }}
+            ></iframe>
+          </Box>
         </FlexBox>
         <Notes>
           After creating the project, I was able to render cross platform login
@@ -263,83 +412,101 @@ function App() {
           from legacy EMR. BOOM BOOM BOOM
         </Notes>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>Lerna</Heading>
-        <FlexBox justifyContent="space-between">
-          <Markdown>```lerna```</Markdown>
-          <Image
-            style={{ height: 500 }}
-            src="https://user-images.githubusercontent.com/645641/79596653-38f81200-80e1-11ea-98cd-1c6a3bb5de51.png"
-          ></Image>
+      <Slide backgroundColor="bgSex">
+        <Heading>Routing</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
+          <Box>
+            <UnorderedList>React Router Dom</UnorderedList>
+            <UnorderedList>React Navigation</UnorderedList>
+          </Box>
+          <Box>
+            <iframe
+              src="https://reactnavigation.org"
+              style={{ height: 500, width: 600 }}
+            ></iframe>
+          </Box>
           <Notes>
-            Lerna is tool used to make monorepos. It was before Yarn workspaces.
-            It still plays well with yarn workspaces. If you want to pick and
-            publish one of the packages, lerna is way to go in monorepos.
+            Routing was a hard topic. Once you have react and react native, they
+            converge pretty much everything other than routing. We don't have
+            browser routing on mobile applications. No query params, no history,
+            no nothing. React Navigation has beta web support but wasn't
+            production ready. In order to have the best of both worlds, I
+            implemented two routers. React Router Dom is inherited from EMR-UI
+            project. I was pretty much familiar with React Navigation which is
+            basically React Native navigation but that name was taken already.
+            After implementing login flow things were ok.
           </Notes>
         </FlexBox>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>React Native</Heading>
-        <FlexBox justifyContent="space-between">
-          <Markdown>```React Native```</Markdown>
-          <Image
-            style={{ height: 500 }}
-            src="https://www.codeplusinfo.com/wp-content/uploads/2020/02/react-native-logo-e1581157043920.png"
-          ></Image>
+      <Slide backgroundColor="bgSex">
+        <Heading>Adding isomorphic packages</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
+          <Quote>
+            Isomorphism is a very general concept that appears in several areas
+            of mathematics. The word derives from the Greek iso, meaning
+            "equal," and morphosis, meaning "to form" or "to shape." Formally,
+            an isomorphism is bijective morphism. Informally, an isomorphism is
+            a map that preserves sets and relations among elements.
+          </Quote>
+
+          <Notes>
+            Isomorphism is a very general concept that appears in several areas
+            of mathematics. The word derives from the Greek iso, meaning
+            "equal," and morphosis, meaning "to form" or "to shape." Formally,
+            an isomorphism is bijective morphism. Informally, an isomorphism is
+            a map that preserves sets and relations among elements. In this
+            context, we call npm packages which can work in both native and web
+            as isomorphic packages. Not all the packages have this spec so we
+            should do due diligence when we want to introduce a package.
+            packages/web/config-overrides.js has many examples on how you can
+            introduce metro based packages to webpack based configurations
+          </Notes>
         </FlexBox>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>React Native for Web</Heading>
-        <FlexBox justifyContent="space-between">
+      <Slide backgroundColor="bgSex">
+        <Heading>Babel vs Metro</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
-            <Markdown>```Project Structure```</Markdown>
-            <Markdown>```@emr-clients name space```</Markdown>
-            <Markdown>```core/components/common```</Markdown>
+            <iframe
+              src="https://babeljs.io/"
+              style={{ height: 500, width: 600 }}
+            ></iframe>
           </Box>
-          <iframe
-            src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
-            style={{ height: 500, width: 600 }}
-          ></iframe>
-        </FlexBox>
-      </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>Typescript</Heading>
-        <FlexBox justifyContent="space-between">
-          <Markdown>```Components```</Markdown>
-          <iframe
-            src="https://www.typescriptlang.org/"
-            style={{ height: 500, width: 600 }}
-          ></iframe>
-        </FlexBox>
-      </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>Typescript</Heading>
-        <FlexBox justifyContent="space-between">
           <Box>
-            <Markdown>```tsconfig```</Markdown>
-            <Markdown>```linter```</Markdown>
+            <iframe
+              src="https://facebook.github.io/metro/"
+              style={{ height: 500, width: 600 }}
+            ></iframe>
           </Box>
-          <iframe
-            src="https://www.typescriptlang.org/"
-            style={{ height: 500, width: 600 }}
-          ></iframe>
+          <Notes>
+            Babel is a transpiler. What?!? Well a transpiler is a tool that
+            reads source code written in one programming language, and produces
+            the equivalent code in another language. React Native uses Babel to
+            convert React syntax and the newer ES5+ syntax into code that can be
+            run in a JavaScript environment that doesn’t support those features.
+            Out of the box Babel doesn’t do anything. It basically parses the
+            code and then generates the same code back out again. In order to
+            introduce some magic you need to integrate plugins (or presets, a
+            set of plugins) for Babel to do anything. Plugins and presets can be
+            installed as packages using yarn (or npm) — a package manager for
+            JavaScript — declaring them in a file called package.json. Packages
+            are available as dependencies or devDependencies. The difference
+            relies on their usage. In fact, while the former are required at
+            runtime, the latter are required during development.
+          </Notes>
         </FlexBox>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
+      <Slide backgroundColor="bgSex">
         <Heading>Monorepo Architecture</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
             <Markdown>```Project Structure```</Markdown>
-            <Markdown>```@emr-clients name space```</Markdown>
+            <Markdown>```@emr-clients namespace```</Markdown>
             <Markdown>```core/components/common```</Markdown>
           </Box>
-          <iframe
-            src="https://www.typescriptlang.org/"
-            style={{ height: 500, width: 600 }}
-          ></iframe>
         </FlexBox>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
+      <Slide backgroundColor="bgSex">
         <Heading>Ducks</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
@@ -353,7 +520,7 @@ function App() {
           ></iframe>
         </FlexBox>
       </Slide>
-      <Slide backgroundColor="backgroundColor">
+      <Slide backgroundColor="bgSex">
         <Heading>Styled Components</Heading>
         <FlexBox justifyContent="space-between">
           <Markdown>```Components```</Markdown>
@@ -363,6 +530,9 @@ function App() {
           ></iframe>
         </FlexBox>
       </Slide>
+
+      {/* Optional */}
+
       {/* Deployments */}
       <Slide backgroundColor="backgroundColor">
         <Heading>Deployments</Heading>
@@ -387,8 +557,8 @@ function App() {
         <OrderedList>VPN</OrderedList>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Working in the project</Heading>
-        <OrderedList>Adding isomorphic packages</OrderedList>
+        <Heading>THE END.</Heading>
+        <OrderedList>Questions?</OrderedList>
       </Slide>
     </Deck>
   );
