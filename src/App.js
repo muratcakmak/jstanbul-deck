@@ -14,18 +14,7 @@ import {
   Slide,
   Quote,
 } from "spectacle";
-import {
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
-  TwitterTweetEmbed,
-  TwitterMomentShare,
-  TwitterDMButton,
-  TwitterVideoEmbed,
-  TwitterOnAirButton,
-} from "react-twitter-embed";
+import { TwitterFollowButton, TwitterTweetEmbed } from "react-twitter-embed";
 
 import "./index.css";
 import { ReactComponent as Logo } from "./logo.svg";
