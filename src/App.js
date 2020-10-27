@@ -624,6 +624,17 @@ function App() {
           </Box>
         </FlexBox>
       </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>Performance</Heading>
+        <FlexBox justifyContent="space-between">
+          <Box>
+            <UnorderedList>Unwanted renderings</UnorderedList>
+            <UnorderedList>react-redux-logger issue</UnorderedList>
+            <UnorderedList>Mobile app performance</UnorderedList>
+            <UnorderedList>Bridge</UnorderedList>
+          </Box>
+        </FlexBox>
+      </Slide>
 
       {/* Optional */}
 
