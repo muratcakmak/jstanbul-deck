@@ -11,6 +11,7 @@ import {
   Notes,
   OrderedList,
   UnorderedList,
+  ListItem,
   Slide,
   Quote,
 } from "spectacle";
@@ -95,12 +96,15 @@ function App() {
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Outline</Heading>
-        <OrderedList>Problem</OrderedList>
-        <OrderedList>Opportunity</OrderedList>
-        <OrderedList>Proposal</OrderedList>
-        <OrderedList>Implementation</OrderedList>
-        <OrderedList>Current State</OrderedList>
-        <OrderedList>Questions</OrderedList>
+        <UnorderedList>
+          <ListItem>Problem</ListItem>
+          <ListItem>Opportunity</ListItem>
+          <ListItem>Proposal</ListItem>
+          <ListItem>Implementation</ListItem>
+          <ListItem>Current State</ListItem>
+          <ListItem>Questions</ListItem>
+        </UnorderedList>
+
         <Notes>
           Urql is a GraphQL client that exposes a set of React components and
           hooks.
@@ -111,8 +115,10 @@ function App() {
         <FlexBox flexDirection="row">
           <Image src={hermes}></Image>
           <Box>
-            <OrderedList>Repeated Code</OrderedList>
-            <OrderedList>NPM packages for the rescue</OrderedList>
+            <UnorderedList>
+              <ListItem>Repeated Code</ListItem>
+              <ListItem>NPM packages for the rescue</ListItem>
+            </UnorderedList>
           </Box>
         </FlexBox>
         <Notes>
@@ -145,7 +151,7 @@ function App() {
         </Notes>
       </Slide>
       <Slide backgroundColor="bgSex">
-        <Heading>TIL: Naming Convention</Heading>
+        <Heading>TIL: Terminology</Heading>
         <OrderedList>EMR: Electronic medical records</OrderedList>
         <OrderedList>EMR UI: Legacy EMR</OrderedList>
         <OrderedList>EMR Clients: Also known as monorepo</OrderedList>
@@ -186,17 +192,25 @@ function App() {
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Problem: How could we share data layer?</Heading>
-        <OrderedList>Save development hours with shared data layer</OrderedList>
-        <Notes>
-          EMR is a CRUD application at the core. We added video chat on top of
-          CRUD application. Most of the we read and display data on the
-          frontend. If user does any add or update to the database we also
-          render it on the UI. It doesn't matter it is an Apple Watch app,
-          Oculus VR App, or Apple Glass app(Coming soon). What it means is if we
-          could cross-platform data layer, we would be able to save enourmous
-          eng time. And eng time means efficiency and we could spend remaining
-          time to improve UX and do fancy/fun things
-        </Notes>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
+          <UnorderedList>
+            Save development hours with shared data layer
+          </UnorderedList>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Why not sharing!?</Heading>
+
+        <UnorderedList>
+          <ListItem>Constants</ListItem>
+          <ListItem>Forms</ListItem>
+          <ListItem>Utils functions</ListItem>
+          <ListItem>Components & Styling</ListItem>
+          <ListItem>Business logic</ListItem>
+          <ListItem>Data fetching</ListItem>
+          <ListItem>Libraries</ListItem>
+        </UnorderedList>
+        <Notes></Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Opportunity: Facelift</Heading>
@@ -204,18 +218,18 @@ function App() {
         <Notes>Riley & Bek</Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Other Goals</Heading>
+        <Heading>Side Goals</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
-            <OrderedList>At least 80%</OrderedList>
-            <OrderedList>Type safety</OrderedList>
-            <OrderedList>Hooks</OrderedList>
-            <OrderedList>CSS in JS</OrderedList>
-            <OrderedList>Solid Project Architecture</OrderedList>
-            <OrderedList>
-              Stellar developer experience and efficiency
-            </OrderedList>
-            <OrderedList>Linter rules</OrderedList>
+            <UnorderedList>
+              <ListItem>At least 80% code sharing</ListItem>
+              <ListItem>Type safety</ListItem>
+              <ListItem>Hooks</ListItem>
+              <ListItem>CSS in JS</ListItem>
+              <ListItem>Solid Project Architecture</ListItem>
+              <ListItem>Stellar developer experience and efficiency</ListItem>
+              <ListItem>Linter rules</ListItem>
+            </UnorderedList>
           </Box>
           <Box>
             <Image src="https://media.giphy.com/media/26FL4BhNXmo8PNLYk/giphy.gif"></Image>
@@ -223,19 +237,26 @@ function App() {
         </FlexBox>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Three options</Heading>
-        <FlexBox flexDirection="row">
+        <FlexBox
+          flexDirection="column"
+          justifyContent="center"
+          verticalAlign="center"
+        >
           <Box>
-            <OrderedList>Kotlin Native</OrderedList>
-            <OrderedList>React Native Web</OrderedList>
-            <OrderedList>Flutter</OrderedList>
+            <Heading></Heading>
           </Box>
+          <Box>
+            <Heading>Kotlin Native/Web</Heading>
+            <Heading>React Native Web</Heading>
+            <Heading>Flutter</Heading>
+          </Box>
+          <Box></Box>
         </FlexBox>
         <Notes></Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Kotlin Native</Heading>
-        <FlexBox justifyContent="space-between">
+        <Heading>Kotlin Native/Web</Heading>
+        <FlexBox verticalAlign="center">
           <Image
             style={{ height: 500 }}
             src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin-logo.svg"
@@ -286,8 +307,9 @@ function App() {
           ></iframe>
         </FlexBox>
         <Notes>
-          Flutter is cool but it requires to learn new language called dart and
-          new ecosystem, their twilio support wasn't solid back then
+          Flutter is cool. The framework renders its own pixel. App and website
+          sharing is not possible. it requires to learn new language called dart
+          and new ecosystem, their twilio support wasn't solid back then.
         </Notes>
       </Slide>
 
@@ -296,18 +318,18 @@ function App() {
         transitionEffect={fancyTransition}
         backgroundImage={"linear-gradient(to right, #8BB9AE, #C8DEE7)"}
       >
-        <Heading>Remember?</Heading>
+        <Heading>Remember the goals?</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
-            <OrderedList>At least 80%</OrderedList>
-            <OrderedList>Type safety</OrderedList>
-            <OrderedList>Hooks</OrderedList>
-            <OrderedList>CSS in JS</OrderedList>
-            <OrderedList>Solid Project Architecture</OrderedList>
-            <OrderedList>
-              Stellar developer experience and efficiency
-            </OrderedList>
-            <OrderedList>Linter rules</OrderedList>
+            <UnorderedList>
+              <ListItem>At least 80% code sharing</ListItem>
+              <ListItem>Type safety</ListItem>
+              <ListItem>Hooks</ListItem>
+              <ListItem>CSS in JS</ListItem>
+              <ListItem>Solid Project Architecture</ListItem>
+              <ListItem>Stellar developer experience and efficiency</ListItem>
+              <ListItem>Linter rules</ListItem>
+            </UnorderedList>
           </Box>
           <Box>
             <Image src="https://media.giphy.com/media/PnnIEAOjAgM85sy5Om/giphy.gif"></Image>
@@ -318,10 +340,9 @@ function App() {
         <Heading>React Native</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
-            <UnorderedList>
-              Cost-effective & code reuse & performance
-            </UnorderedList>
-            <UnorderedList>Reusable Components</UnorderedList>
+            <UnorderedList>Cost-effective</UnorderedList>
+            <UnorderedList>Code reuse</UnorderedList>
+            <UnorderedList>Performance</UnorderedList>
           </Box>
           <Box>
             <iframe
