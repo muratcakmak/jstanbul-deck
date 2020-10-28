@@ -685,6 +685,7 @@ function App() {
               <ListItem>Dark/Light Theme</ListItem>
               <ListItem>Spacing</ListItem>
               <ListItem>Colors</ListItem>
+              <ListItem>Typography</ListItem>
             </UnorderedList>
           </Box>
           <Box>
@@ -732,10 +733,16 @@ function App() {
         <OrderedList>CircleCI & Aptible</OrderedList>
         <OrderedList>
           Github Actions <OrderedList>Running tests</OrderedList>
-          <OrderedList>Notorious LGTM</OrderedList>
         </OrderedList>
         <OrderedList>Preview Links -> Netlify</OrderedList>
-        <Notes>notorious deployment time</Notes>
+        <Notes>
+          Same tooling around deployment with legacy EMR, Store and CX. pretty
+          long deployment time which we'll work on the decrease. We'll take care
+          of it with the help of the devops team and Santiago. We are running
+          pure function tests using github actions. We used a github action
+          called LGTM. Our preview links are powered by netlify which is pretty
+          neat.
+        </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Mobile Deployments</Heading>
@@ -749,7 +756,12 @@ function App() {
         <OrderedList>Web: Tap Collector</OrderedList>
         <OrderedList>Mobile: Instabug</OrderedList>
         <OrderedList>Both: Sentry</OrderedList>
-        <Notes></Notes>
+        <Notes>
+          CodePush is a Microsoft library for React Native and Cordova, which
+          allows you to launch code and image updates through a proprietary
+          server. This will be directly installed without the need for end-users
+          to update the application through the relevant app store.
+        </Notes>
       </Slide>
       {/* Security */}
       <Slide backgroundColor="backgroundColor">
