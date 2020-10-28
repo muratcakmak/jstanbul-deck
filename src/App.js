@@ -89,7 +89,7 @@ function App() {
             </Heading>
           </FlexBox>
           <Heading margin="0px 32px" fontSize="h3" color="grey">
-            Monorepo, facelift, refreshed...
+            Monorepo, facelift, refreshed, iOS, Web...
           </Heading>
           <TwitterFollowButton screenName={"omc345"} />
         </FlexBox>
@@ -210,7 +210,7 @@ function App() {
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Opportunity: Facelift</Heading>
-        <OrderedList>Redesigning the EMR with actual `Designers`</OrderedList>
+        <OrderedList>Redesigning the EMR with actual *Designers*</OrderedList>
         <Notes>Riley & Bek</Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
@@ -247,6 +247,9 @@ function App() {
             <Heading>Flutter</Heading>
           </Box>
           <Box></Box>
+          <Notes>
+            We considered those three options before we made up our minds.{" "}
+          </Notes>
         </FlexBox>
         <Notes></Notes>
       </Slide>
@@ -745,6 +748,8 @@ function App() {
         <Heading>Bug Reports</Heading>
         <OrderedList>Web: Tap Collector</OrderedList>
         <OrderedList>Mobile: Instabug</OrderedList>
+        <OrderedList>Both: Sentry</OrderedList>
+        <Notes></Notes>
       </Slide>
       {/* Security */}
       <Slide backgroundColor="backgroundColor">
