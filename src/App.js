@@ -105,10 +105,7 @@ function App() {
           <ListItem>Questions</ListItem>
         </UnorderedList>
 
-        <Notes>
-          Urql is a GraphQL client that exposes a set of React components and
-          hooks.
-        </Notes>
+        <Notes>Read the slide</Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Hermes</Heading>
@@ -505,20 +502,18 @@ function App() {
             ></iframe>
           </Box>
         </FlexBox>
-        <Notes></Notes>
+        <Notes>
+          There is a library called patch packages. Lets app authors instantly
+          make and keep fixes to npm dependencies. It's a vital band-aid for
+          those of us living on the bleeding edge.
+        </Notes>
       </Slide>
       <Slide backgroundColor="bgSex">
-        <Heading>Babel vs Metro</Heading>
+        <Heading>Babel</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
             <iframe
               src="https://babeljs.io/"
-              style={{ height: 500, width: 600 }}
-            ></iframe>
-          </Box>
-          <Box>
-            <iframe
-              src="https://facebook.github.io/metro/"
               style={{ height: 500, width: 600 }}
             ></iframe>
           </Box>
@@ -541,6 +536,32 @@ function App() {
         </FlexBox>
       </Slide>
       <Slide backgroundColor="bgSex">
+        <Heading>Bundler: Metro vs Webpack</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
+          <Box>
+            <iframe
+              src="https://webpack.js.org"
+              style={{ height: 500, width: 600 }}
+            ></iframe>
+          </Box>
+          <Box>
+            <iframe
+              src="https://facebook.github.io/metro/"
+              style={{ height: 500, width: 600 }}
+            ></iframe>
+          </Box>
+          <Notes>
+            A JavaScript bundler is a tool that puts your code and all its
+            dependencies together in one JavaScript file. There are many of them
+            out there these days, being the most popular ones browserify and
+            webpack. ... Historically JavaScript hasn't had a standard for
+            requiring dependencies from your code. Module bundlers are tools
+            frontend developers used to bundle JavaScript modules into a single
+            JavaScript files that can be executed in the browser.
+          </Notes>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="bgSex">
         <Heading>Monorepo Architecture</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
@@ -553,6 +574,15 @@ function App() {
             <OrderedList>assets</OrderedList>
           </Box>
         </FlexBox>
+        <Notes>
+          Monorepo architecture shares shared npm packages hoisted up to the
+          root level. You can still keep npm libraries in local level if it is
+          needed. mobile, web and assets don't have namespace since they don't
+          have any potential to be an npm library later. common, components, and
+          core has namespace as emr-clients which is good. I don't expect core
+          to be stand alone since it has all the business logic and data layer
+          in it. We didn't seperate redux/redux saga from composite UI Layer
+        </Notes>
       </Slide>
       <Slide backgroundColor="bgSex">
         <Heading>@emr-clients/components</Heading>
@@ -562,6 +592,10 @@ function App() {
             <OrderedList>{`<Calendar> component was the most nagging`}</OrderedList>
             <OrderedList>{`There is some atomic components and also moleculer component`}</OrderedList>
           </Box>
+          <Notes>
+            It has all the atomic UI components and some level of mid level
+            components. We have variants of button
+          </Notes>
         </FlexBox>
       </Slide>
       <Slide backgroundColor="bgSex">
@@ -571,6 +605,11 @@ function App() {
             <OrderedList>{`Business logic`}</OrderedList>
             <OrderedList>{`Pretty much whole application`}</OrderedList>
           </Box>
+          <Notes>
+            The project uses .web, .native, .ios, .android file extensions.
+            Let's say you have a react native specific library such as
+            twilio-ios you dont want it to be rendered
+          </Notes>
         </FlexBox>
       </Slide>
       <Slide backgroundColor="bgSex">
@@ -589,6 +628,11 @@ function App() {
             style={{ height: 500, width: 600 }}
           ></iframe>
         </FlexBox>
+        <Notes>
+          Basically, instead of seperating files based on their duty, seperating
+          them based on the feature so you don't need to look for long hours to
+          find a one specific redux action in the file tree
+        </Notes>
       </Slide>
       <Slide backgroundColor="bgSex">
         <Heading>Styled Components</Heading>
@@ -608,9 +652,11 @@ function App() {
         <Heading>Styled Components (continued)</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
-            <UnorderedList>Dark/Light Theme</UnorderedList>
-            <UnorderedList>Spacing</UnorderedList>
-            <UnorderedList>Colors</UnorderedList>
+            <UnorderedList>
+              <ListItem>Dark/Light Theme</ListItem>
+              <ListItem>Spacing</ListItem>
+              <ListItem>Colors</ListItem>
+            </UnorderedList>
           </Box>
           <Box>
             <iframe
@@ -622,6 +668,10 @@ function App() {
               allowfullscreen
             ></iframe>
           </Box>
+          <Notes>
+            This is a CSS in JS solution. It doesn't use seperate CSS files. We
+            inherited this from sotre.
+          </Notes>
         </FlexBox>
       </Slide>
       <Slide backgroundColor="bgSex">
@@ -632,8 +682,17 @@ function App() {
             <UnorderedList>react-redux-logger issue</UnorderedList>
             <UnorderedList>Mobile app performance</UnorderedList>
             <UnorderedList>Bridge</UnorderedList>
+            <UnorderedList>Twilio</UnorderedList>
           </Box>
         </FlexBox>
+        <Notes>
+          Earlier in the project we had unwanted render each time redux store is
+          updated the whole app was rerendering. We use useMemo and reselect to
+          overcome performance issue. We had a bizare one on the mobile app. We
+          inherited redux logger from web and metro bundler production build
+          wasn't removing loggers in the production and mobile was unresponsive
+          after going through 2 visits
+        </Notes>
       </Slide>
 
       {/* Optional */}
