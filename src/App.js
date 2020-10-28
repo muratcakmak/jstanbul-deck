@@ -121,13 +121,9 @@ function App() {
         <Notes>
           During the project Hermes aka synchronous consultation we're able to
           build quickly for web thanks to the shared component between EMR and
-          Store. This was partially thanks to github npm registry. And my
-          attempt to have a uniform repository between EMR and CX which I
-          started to work on first. I am briefly touching on Cactus. Cactus is a
-          generally purpose component library shared between Store and EMR at
-          the time being. I wanted to make it general purpose component library
-          but seems like creating infrastructure between store and EMR is harder
-          than doing your own implementation. So we kept it
+          Store.This was partially thanks to github npm registry. And my attempt
+          to have a uniform repository between EMR and CX which I started to
+          work on first. I am briefly touching on Cactus.
         </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
@@ -136,15 +132,10 @@ function App() {
           <Image width="1200" src={cactus}></Image>
         </FlexBox>
         <Notes>
-          During the project Hermes aka synchronous consultation we're able to
-          build quickly for web thanks to the shared component between EMR and
-          Store. This was partially thanks to github npm registry. And my
-          attempt to have a uniform repository between EMR and CX which I
-          started to work on first. I am briefly touching on Cactus. Cactus is a
-          generally purpose component library shared between Store and EMR at
-          the time being. I wanted to make it general purpose component library
-          but seems like creating infrastructure between store and EMR is harder
-          than doing your own implementation. So we kept it
+          Cactus was an attempt a generally purpose component library shared
+          between Store and EMR at the time being. We had to build audio and
+          video components which relies on twilio. Instead of building
+          seperately for EMR and store, we build once and used it everywhere.I
         </Notes>
       </Slide>
       <Slide backgroundColor="bgSex">
@@ -184,7 +175,9 @@ function App() {
           engineering resources we have. At that time, EMR had 3 UI engineers
           and 1 iOS engineer. So each feature was repeated in the mobile and the
           web. Mobile was also iOS only. It wasn't the ideal way to spend energy
-          so I started to think about a solution
+          so I started to think about a solution. Since Limited engineering
+          resources, we had to innovate and come up with more efficient
+          solution.
         </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
@@ -194,6 +187,10 @@ function App() {
             Save development hours with shared data layer
           </UnorderedList>
         </FlexBox>
+        <Notes>
+          State container and networks calls. If we have one source of truth to
+          maintain than two or more, it would be huge win
+        </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Why not sharing!?</Heading>
@@ -207,7 +204,9 @@ function App() {
           <ListItem>Data fetching</ListItem>
           <ListItem>Libraries</ListItem>
         </UnorderedList>
-        <Notes></Notes>
+        <Notes>
+          Once shared data layer idea makes sense,We could extend it to{" "}
+        </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Opportunity: Facelift</Heading>
@@ -349,22 +348,22 @@ function App() {
           </Box>
         </FlexBox>
         <Notes>
-          Pretty cool technology. Developed at Facebook for their most
-          downloaded iOS app in the universe. Their main goal was to increase
-          developer productivity. They first announced it for iOS. and build
-          Android later. Historically, iOS first so they have solid iOS support.
-          Most of the industry needs CRUD applications if they are not game or
-          XR(x reality, AR, VR, MX(mixed reality) or everything in between).
-          Airbnb was the first adapter of React and they proved that React has
-          capacity to be used in big projects. They adopted react native as
-          well. Then removed it because it wasn't good for their use case. We
-          don't know for sure but Facebook Marketplace is purely written in
-          React Native. Since React Native is using declarative syntax of React
-          it has smooth onboarding for people coming from web development ---
-          React Native provides you the code reuse service for deployment of
-          code on two different platforms such as iOS & Android. Because of code
-          reuse service react-native saves up to 40% of the total development
-          cost.
+          move forward with rn. Pretty cool technology. Developed at Facebook
+          for their most downloaded iOS app in the universe. Their main goal was
+          to increase developer productivity. They first announced it for iOS.
+          and build Android later. Historically, iOS first so they have solid
+          iOS support. Most of the industry needs CRUD applications if they are
+          not game or XR(x reality, AR, VR, MX(mixed reality) or everything in
+          between). Airbnb was the first adapter of React and they proved that
+          React has capacity to be used in big projects. They adopted react
+          native as well. Then removed it because it wasn't good for their use
+          case. We don't know for sure but Facebook Marketplace is purely
+          written in React Native. Since React Native is using declarative
+          syntax of React it has smooth onboarding for people coming from web
+          development --- React Native provides you the code reuse service for
+          deployment of code on two different platforms such as iOS & Android.
+          Because of code reuse service react-native saves up to 40% of the
+          total development cost.
           https://shivlab.com/blog/top-features-benefits-of-react-native-in-2020/
         </Notes>
       </Slide>
@@ -375,7 +374,7 @@ function App() {
             <UnorderedList>Superior Developer Experience</UnorderedList>
             <UnorderedList>Live reload and hot reload</UnorderedList>
             <UnorderedList>React Similar Architecture</UnorderedList>
-            <UnorderedList>Reusable Components</UnorderedList>
+            <UnorderedList>Huge community support</UnorderedList>
           </Box>
           <Box>
             <iframe
@@ -392,9 +391,33 @@ function App() {
           changing to the programming. Live reload will provide you with a
           two-screen service so that on one you can modify the code and see the
           result on the other screen. --- Since we are pretty much React shop,
-          it is pretty big selling point in our organization
+          it is pretty big selling point in our organization. ---Scroll down
         </Notes>
       </Slide>
+
+      <Slide backgroundColor="bgSex">
+        <Heading>React Native</Heading>
+        <FlexBox verticalAlign="center">
+          <Image
+            width="80%"
+            src="https://miro.medium.com/max/1540/1*uHOS6oi74jX54CoZ1hEjCg.png"
+          ></Image>
+        </FlexBox>
+        <Notes>
+          The bridge is built in C/C++ and thus, can be run on multiple
+          platforms, OS etc... It embeds the Apple JavaScriptCore framework in,
+          which exposes APIs to access the actual JavacriptCore VM capabilities.
+          Many people use these APIs on the Obj-C and Swift world. But there is
+          a C API, and the Obj-C one is actually just a wrapper. With this in
+          mind, JavaScript code can be run inside a C/C++ program. It can inject
+          variables, functions and declare globals to enhance the JavaScript
+          existing code. React Native relies on this kind of magic to make
+          JavaScript communicate with the native world and thus trigger actions
+          in the C/C++ world. ---- Fabric ve TurboModules kavramları gelecek.
+          Sonraki yazımda bu kavramlardan bahsedeceğim.
+        </Notes>
+      </Slide>
+
       <Slide backgroundColor="bgSex">
         <Heading>React Native for Web</Heading>
         <FlexBox justifyContent="space-between">
@@ -540,13 +563,13 @@ function App() {
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
             <iframe
-              src="https://webpack.js.org"
+              src="https://facebook.github.io/metro/"
               style={{ height: 500, width: 600 }}
             ></iframe>
           </Box>
           <Box>
             <iframe
-              src="https://facebook.github.io/metro/"
+              src="https://webpack.js.org"
               style={{ height: 500, width: 600 }}
             ></iframe>
           </Box>
@@ -602,8 +625,11 @@ function App() {
         <Heading>@emr-clients/core</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
-            <OrderedList>{`Business logic`}</OrderedList>
             <OrderedList>{`Pretty much whole application`}</OrderedList>
+            <OrderedList>{`Business logic`}</OrderedList>
+            <OrderedList>{`Redux-sagas`}</OrderedList>
+            <OrderedList>{`Views`}</OrderedList>
+            <OrderedList>{`Pages`}</OrderedList>
           </Box>
           <Notes>
             The project uses .web, .native, .ios, .android file extensions.
@@ -634,7 +660,7 @@ function App() {
           find a one specific redux action in the file tree
         </Notes>
       </Slide>
-      <Slide backgroundColor="bgSex">
+      {/* <Slide backgroundColor="bgSex">
         <Heading>Styled Components</Heading>
         <FlexBox justifyContent="space-between">
           <Markdown>Components</Markdown>
@@ -647,9 +673,9 @@ function App() {
             allowfullscreen
           ></iframe>
         </FlexBox>
-      </Slide>
+      </Slide> */}
       <Slide backgroundColor="bgSex">
-        <Heading>Styled Components (continued)</Heading>
+        <Heading>Styled Components</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
             <UnorderedList>
@@ -700,18 +726,20 @@ function App() {
       {/* Deployments */}
       <Slide backgroundColor="backgroundColor">
         <Heading>Web Deployments</Heading>
-        <OrderedList>CircleCI</OrderedList>
+        <OrderedList>CircleCI & Aptible</OrderedList>
         <OrderedList>
           Github Actions <OrderedList>Running tests</OrderedList>
           <OrderedList>Notorious LGTM</OrderedList>
         </OrderedList>
-        <OrderedList>Preview Links</OrderedList>
+        <OrderedList>Preview Links -> Netlify</OrderedList>
         <Notes>notorious deployment time</Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Mobile Deployments</Heading>
         <OrderedList>Codepush - OTA</OrderedList>
+        <OrderedList>TestFlight</OrderedList>
         <OrderedList>Bitrise</OrderedList>
+        <Notes>Codepush -></Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Bug Reports</Heading>
