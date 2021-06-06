@@ -58,6 +58,10 @@ const fancyTransition = {
   },
 };
 
+const OguzhanLogo = () => {
+  return <h3>@omc345 | Haziran 2021</h3>;
+};
+
 const template = ({ slideNumber, numberOfSlides }) => (
   <FlexBox
     justifyContent="space-between"
@@ -68,7 +72,7 @@ const template = ({ slideNumber, numberOfSlides }) => (
     <Box padding="0 1em">
       <FullScreen />
     </Box>
-    <Logo />
+    <OguzhanLogo />
     <Box padding="1em">
       {slideNumber + 1}/{numberOfSlides}
     </Box>
@@ -80,16 +84,16 @@ function App() {
     <Deck theme={theme} template={template}>
       <Slide backgroundColor="backgroundColor">
         <FlexBox height="100%" flexDirection="column">
-          <Heading margin="0px" fontSize="150px" color="offwhite">
-            EMR Monorepo
+          <Heading margin="0px" fontSize="110px" color="offwhite">
+            React/React Native Web Monorepo
           </Heading>
           <FlexBox>
             <Heading margin="0px" fontSize="h2">
-              Oguzhan Murat Cakmak
+              Oğuzhan Murat Çakmak
             </Heading>
           </FlexBox>
           <Heading margin="0px 32px" fontSize="h3" color="grey">
-            Monorepo, facelift, refreshed, iOS, Web...
+            Web, iOS, and Android
           </Heading>
           <TwitterFollowButton screenName={"omc345"} />
         </FlexBox>
@@ -140,9 +144,6 @@ function App() {
       </Slide>
       <Slide backgroundColor="bgSex">
         <Heading>TIL: Terminology</Heading>
-        <OrderedList>EMR: Electronic medical records</OrderedList>
-        <OrderedList>EMR UI: Legacy EMR</OrderedList>
-        <OrderedList>EMR Clients: Also known as monorepo</OrderedList>
         <OrderedList>Web: Web</OrderedList>
         <OrderedList>
           Native: iOS and Android. In React Native context, they refer as native
@@ -157,7 +158,6 @@ function App() {
             is to have a one code base to rule them all. It is economically and
             technically ambitions goal and you have to do some trade-offs. Most
             of the cross-platform applications are not solid due to the need of
-            refinements.
           </Notes>
         </FlexBox>
       </Slide>
@@ -256,10 +256,10 @@ function App() {
       <Slide backgroundColor="backgroundColor">
         <Heading>Kotlin Native/Web</Heading>
         <FlexBox verticalAlign="center">
-          <Image
-            style={{ height: 500 }}
-            src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin-logo.svg"
-          ></Image>
+          <iframe
+            style={{ height: 500, width: 500 }}
+            src="https://kotlinlang.org/docs/native-overview.html"
+          ></iframe>
         </FlexBox>
         <Notes>
           Kotlin/Native is a technology for compiling Kotlin code to native
