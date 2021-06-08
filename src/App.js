@@ -18,9 +18,10 @@ import {
 import { TwitterFollowButton, TwitterTweetEmbed } from "react-twitter-embed";
 
 import "./index.css";
-import { ReactComponent as Logo } from "./logo.svg";
 import hermes from "./assets/hermes.gif";
 import cactus from "./assets/cactus.png";
+import uber from "./assets/uber.jpg";
+import dho from "./assets/dho.jpg";
 
 const theme = {
   colors: {
@@ -59,7 +60,7 @@ const fancyTransition = {
 };
 
 const OguzhanLogo = () => {
-  return <h3>@omc345 | Haziran 2021</h3>;
+  return <h3>@omc345 | June 2021</h3>;
 };
 
 const template = ({ slideNumber, numberOfSlides }) => (
@@ -99,17 +100,74 @@ function App() {
         </FlexBox>
       </Slide>
       <Slide backgroundColor="backgroundColor">
+        <Heading>Me</Heading>
+        <FlexBox flexDirection="row">
+          <Image src={dho} height="450"></Image>
+          <Box width="50%">
+            <UnorderedList>
+              <ListItem>Studied 8 years to become a Naval Officer</ListItem>
+              <ListItem>
+                Served as a Engineer Officer onboard for 5 years
+              </ListItem>
+            </UnorderedList>
+          </Box>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Me</Heading>
+        <FlexBox flexDirection="row">
+          <Image src={uber} width="600"></Image>
+          <Box width="50%">
+            <UnorderedList>
+              <ListItem>Bogazici University</ListItem>
+              <ListItem>Airties</ListItem>
+              <ListItem>Mynet</ListItem>
+              <ListItem>Uber</ListItem>
+            </UnorderedList>
+          </Box>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="backgroundColor">
         <Heading>Outline</Heading>
         <UnorderedList>
+          <ListItem>Definitions</ListItem>
           <ListItem>Problem</ListItem>
           <ListItem>Opportunity</ListItem>
           <ListItem>Proposal</ListItem>
           <ListItem>Implementation</ListItem>
           <ListItem>Current State</ListItem>
-          <ListItem>Questions</ListItem>
         </UnorderedList>
-
         <Notes>Read the slide</Notes>
+      </Slide>
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Some definitions</Heading>
+        <UnorderedList>
+          <OrderedList>monorepo: single repository</OrderedList>
+          <OrderedList>cross platform app development</OrderedList>
+          <OrderedList>React</OrderedList>
+          <OrderedList>React Native</OrderedList>
+          <OrderedList>Web: Web</OrderedList>
+          <OrderedList>
+            Native: iOS and Android. In React Native context, they refer as
+            native
+          </OrderedList>
+        </UnorderedList>
+        <Notes>- Easier to share code, one source of truth</Notes>
+        <Notes>
+          Cross-platform application development is about building a single
+          application that can run on various operating systems, instead of
+          developing different app versions for each platform
+        </Notes>
+        <Notes>
+          We have a unique naming in the web technologies. I learned iOS as iOS
+          development back in the time I was doing only iOS dev. It turned out
+          that they call it native in web terminology. Native applications are
+          using only tools provided by operating system vendors such as Apple
+          and Google in this case. What cross-platform applications aims is to
+          have a one code base to rule them all. It is economically and
+          technically ambitions goal and you have to do some trade-offs. Most of
+          the cross-platform applications are not solid due to the need of
+        </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Hermes</Heading>
@@ -141,25 +199,6 @@ function App() {
           video components which relies on twilio. Instead of building
           seperately for EMR and store, we build once and used it everywhere.I
         </Notes>
-      </Slide>
-      <Slide backgroundColor="bgSex">
-        <Heading>TIL: Terminology</Heading>
-        <OrderedList>Web: Web</OrderedList>
-        <OrderedList>
-          Native: iOS and Android. In React Native context, they refer as native
-        </OrderedList>
-        <FlexBox justifyContent="space-between">
-          <Notes>
-            We have a unique naming in the web technologies. I learned iOS as
-            iOS development back in the time I was doing only iOS dev. It turned
-            out that they call it native in web terminology. Native applications
-            are using only tools provided by operating system vendors such as
-            Apple and Google in this case. What cross-platform applications aims
-            is to have a one code base to rule them all. It is economically and
-            technically ambitions goal and you have to do some trade-offs. Most
-            of the cross-platform applications are not solid due to the need of
-          </Notes>
-        </FlexBox>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>EMR UI Team</Heading>
@@ -281,7 +320,7 @@ function App() {
           </Box>
           <Box>
             <iframe
-              src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
+              src="https://classic.yarnpkg.com/blog/2017/08/02/introducing-workspaces/"
               style={{ height: 500, width: 600 }}
             ></iframe>
           </Box>
@@ -311,7 +350,6 @@ function App() {
           and new ecosystem, their twilio support wasn't solid back then.
         </Notes>
       </Slide>
-
       {/* Actual work */}
       <Slide
         transitionEffect={fancyTransition}
@@ -397,7 +435,6 @@ function App() {
           it is pretty big selling point in our organization. ---Scroll down
         </Notes>
       </Slide>
-
       <Slide backgroundColor="bgSex">
         <Heading>React Native</Heading>
         <FlexBox verticalAlign="center">
@@ -420,7 +457,6 @@ function App() {
           Sonraki yazımda bu kavramlardan bahsedeceğim.
         </Notes>
       </Slide>
-
       <Slide backgroundColor="bgSex">
         <Heading>React Native for Web</Heading>
         <FlexBox justifyContent="space-between">
@@ -430,7 +466,7 @@ function App() {
             <UnorderedList>{`<Text /> instead of <h1 />`}</UnorderedList>
           </Box>
           <iframe
-            src="https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej"
+            src="https://necolas.github.io/react-native-web"
             style={{ height: 500, width: 600 }}
           ></iframe>
         </FlexBox>
@@ -652,10 +688,10 @@ function App() {
       <Slide backgroundColor="bgSex">
         <Heading>Ducks (continued)</Heading>
         <FlexBox verticalAlign="center">
-          <iframe
-            src="https://www.freecodecamp.org/news/scaling-your-redux-app-with-ducks-6115955638be/"
-            style={{ height: 500, width: 600 }}
-          ></iframe>
+          <Image
+            height="500"
+            src="https://p0.pikist.com/photos/590/144/duck-meet-ducks-rubber-ducks-plastic-ducks-duck-race-competition-toys-yellow-duck-race.jpg"
+          ></Image>
         </FlexBox>
         <Notes>
           Basically, instead of seperating files based on their duty, seperating
@@ -724,9 +760,7 @@ function App() {
           after going through 2 visits
         </Notes>
       </Slide>
-
       {/* Optional */}
-
       {/* Deployments */}
       <Slide backgroundColor="backgroundColor">
         <Heading>Web Deployments</Heading>
@@ -766,6 +800,28 @@ function App() {
       {/* Security */}
       <Slide backgroundColor="backgroundColor">
         <Heading>Security</Heading>
+        <OrderedList>FaceID, TouchID, Biometric Auth</OrderedList>
+        <OrderedList>MFA</OrderedList>
+        <OrderedList>VPN</OrderedList>
+        <Notes>
+          Behind vpm for internal users --- two vpn --- the fact that internal
+          users have @forhims.com and clinicians are not. If we they have
+          @forhims.com healthcare providers, telemedicine company (faciliator).
+          Single sign on. p81 it is either signle signon or indepedently
+          managed.com. 300 simultaneous. east of missipisi, west of missispi.
+          what albert and petr, they close it geographically binded. clinician
+          endpoint nordVPN for p81. --------------- --- pound check doctors
+          change their password, database for leaked passwords, we increase the
+          requirement of length and we got rid of that, when you change your
+          password, it doesn't allow you to add it --------------- backend for
+          vpn, downlaod the profile trust it. p81, downloading and independent
+          app and seems to be stable. that's looking forward put the backend
+          behind the VPN --
+        </Notes>
+      </Slide>{" "}
+      {/* Preview Links*/}
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Mobile Preview links</Heading>
         <OrderedList>FaceID, TouchID, Biometric Auth</OrderedList>
         <OrderedList>MFA</OrderedList>
         <OrderedList>VPN</OrderedList>
