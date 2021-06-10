@@ -21,7 +21,7 @@ import "./index.css";
 import hermes from "./assets/hermes.gif";
 import cactus from "./assets/cactus.png";
 import uber from "./assets/uber.jpg";
-import dho from "./assets/dho.jpg";
+// import dho from "./assets/dho.jpg";
 
 const theme = {
   colors: {
@@ -100,29 +100,15 @@ function App() {
         </FlexBox>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Me</Heading>
-        <FlexBox flexDirection="row">
-          <Image src={dho} height="450"></Image>
-          <Box width="50%">
-            <UnorderedList>
-              <ListItem>Studied 8 years to become a Naval Officer</ListItem>
-              <ListItem>
-                Served as a Engineer Officer onboard for 5 years
-              </ListItem>
-            </UnorderedList>
-          </Box>
-        </FlexBox>
-      </Slide>
-      <Slide backgroundColor="backgroundColor">
-        <Heading>Me</Heading>
+        <Heading>Oguzhan Murat Cakmak</Heading>
         <FlexBox flexDirection="row">
           <Image src={uber} width="600"></Image>
           <Box width="50%">
             <UnorderedList>
-              <ListItem>Bogazici University</ListItem>
               <ListItem>Airties</ListItem>
               <ListItem>Mynet</ListItem>
               <ListItem>Uber</ListItem>
+              <ListItem>Hims & Hers</ListItem>
             </UnorderedList>
           </Box>
         </FlexBox>
@@ -156,9 +142,7 @@ function App() {
         <Notes>
           Cross-platform application development is about building a single
           application that can run on various operating systems, instead of
-          developing different app versions for each platform
-        </Notes>
-        <Notes>
+          developing different app versions for each platform. *****************
           We have a unique naming in the web technologies. I learned iOS as iOS
           development back in the time I was doing only iOS dev. It turned out
           that they call it native in web terminology. Native applications are
@@ -166,7 +150,10 @@ function App() {
           and Google in this case. What cross-platform applications aims is to
           have a one code base to rule them all. It is economically and
           technically ambitions goal and you have to do some trade-offs. Most of
-          the cross-platform applications are not solid due to the need of
+          the cross-platform applications are not solid due to the need
+          of************ React -> Declerative, component based, unidirectional
+          data flow u olan ve bu componentlerin data degisimine react ettigi bir
+          kutuphane
         </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
@@ -570,7 +557,7 @@ function App() {
           those of us living on the bleeding edge.
         </Notes>
       </Slide>
-      <Slide backgroundColor="bgSex">
+      {/* <Slide backgroundColor="bgSex">
         <Heading>Babel</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <Box>
@@ -596,7 +583,7 @@ function App() {
             runtime, the latter are required during development.
           </Notes>
         </FlexBox>
-      </Slide>
+      </Slide> */}
       <Slide backgroundColor="bgSex">
         <Heading>Bundler: Metro vs Webpack</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
@@ -741,7 +728,7 @@ function App() {
         </FlexBox>
       </Slide>
       <Slide backgroundColor="bgSex">
-        <Heading>Performance</Heading>
+        <Heading>General Performance</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
             <UnorderedList>Unwanted renderings</UnorderedList>
@@ -749,6 +736,26 @@ function App() {
             <UnorderedList>Mobile app performance</UnorderedList>
             <UnorderedList>Bridge</UnorderedList>
             <UnorderedList>Twilio</UnorderedList>
+          </Box>
+        </FlexBox>
+        <Notes>
+          Earlier in the project we had unwanted render each time redux store is
+          updated the whole app was rerendering. We use useMemo and reselect to
+          overcome performance issue. We had a bizare one on the mobile app. We
+          inherited redux logger from web and metro bundler production build
+          wasn't removing loggers in the production and mobile was unresponsive
+          after going through 2 visits
+        </Notes>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>Native Performance</Heading>
+        <FlexBox justifyContent="space-between">
+          <Box>
+            <UnorderedList>
+              <ListItem> UI re-renders </ListItem>
+              <ListItem>External libraries</ListItem>
+              <ListItem>Balance between JS and native runtime</ListItem>
+            </UnorderedList>
           </Box>
         </FlexBox>
         <Notes>
@@ -776,6 +783,28 @@ function App() {
           pure function tests using github actions. We used a github action
           called LGTM. Our preview links are powered by netlify which is pretty
           neat.
+        </Notes>
+      </Slide>
+      {/* Preview Links*/}
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Mobile Preview links</Heading>
+        <OrderedList>
+          <ListItem>Insert Video Here</ListItem>
+        </OrderedList>
+        <Notes>
+          Behind vpm for internal users --- two vpn --- the fact that internal
+          users have @forhims.com and clinicians are not. If we they have
+          @forhims.com healthcare providers, telemedicine company (faciliator).
+          Single sign on. p81 it is either signle signon or indepedently
+          managed.com. 300 simultaneous. east of missipisi, west of missispi.
+          what albert and petr, they close it geographically binded. clinician
+          endpoint nordVPN for p81. --------------- --- pound check doctors
+          change their password, database for leaked passwords, we increase the
+          requirement of length and we got rid of that, when you change your
+          password, it doesn't allow you to add it --------------- backend for
+          vpn, downlaod the profile trust it. p81, downloading and independent
+          app and seems to be stable. that's looking forward put the backend
+          behind the VPN --
         </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
@@ -819,28 +848,6 @@ function App() {
           behind the VPN --
         </Notes>
       </Slide>{" "}
-      {/* Preview Links*/}
-      <Slide backgroundColor="backgroundColor">
-        <Heading>Mobile Preview links</Heading>
-        <OrderedList>FaceID, TouchID, Biometric Auth</OrderedList>
-        <OrderedList>MFA</OrderedList>
-        <OrderedList>VPN</OrderedList>
-        <Notes>
-          Behind vpm for internal users --- two vpn --- the fact that internal
-          users have @forhims.com and clinicians are not. If we they have
-          @forhims.com healthcare providers, telemedicine company (faciliator).
-          Single sign on. p81 it is either signle signon or indepedently
-          managed.com. 300 simultaneous. east of missipisi, west of missispi.
-          what albert and petr, they close it geographically binded. clinician
-          endpoint nordVPN for p81. --------------- --- pound check doctors
-          change their password, database for leaked passwords, we increase the
-          requirement of length and we got rid of that, when you change your
-          password, it doesn't allow you to add it --------------- backend for
-          vpn, downlaod the profile trust it. p81, downloading and independent
-          app and seems to be stable. that's looking forward put the backend
-          behind the VPN --
-        </Notes>
-      </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>THE END</Heading>
         <FlexBox verticalAlign="center">
