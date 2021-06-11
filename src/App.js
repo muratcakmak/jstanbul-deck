@@ -731,30 +731,22 @@ function App() {
         <Heading>General Performance</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
-            <UnorderedList>Unwanted renderings</UnorderedList>
-            <UnorderedList>react-redux-logger issue</UnorderedList>
-            <UnorderedList>Mobile app performance</UnorderedList>
-            <UnorderedList>Bridge</UnorderedList>
-            <UnorderedList>Twilio</UnorderedList>
-          </Box>
-        </FlexBox>
-        <Notes>
-          Earlier in the project we had unwanted render each time redux store is
-          updated the whole app was rerendering. We use useMemo and reselect to
-          overcome performance issue. We had a bizare one on the mobile app. We
-          inherited redux logger from web and metro bundler production build
-          wasn't removing loggers in the production and mobile was unresponsive
-          after going through 2 visits
-        </Notes>
-      </Slide>
-      <Slide backgroundColor="bgSex">
-        <Heading>Native Performance</Heading>
-        <FlexBox justifyContent="space-between">
-          <Box>
             <UnorderedList>
-              <ListItem> UI re-renders </ListItem>
-              <ListItem>External libraries</ListItem>
-              <ListItem>Balance between JS and native runtime</ListItem>
+              <ListItem>Unwanted UI rerenderings</ListItem>
+              <ListItem>react-redux-logger issue</ListItem>
+              <ListItem>Mobile app performance</ListItem>
+              <ListItem>
+                Bridge
+                <UnorderedList>
+                  <ListItem>External libraries</ListItem>
+                </UnorderedList>
+              </ListItem>
+              <ListItem>
+                Balance between JS and native runtime
+                <UnorderedList>
+                  <ListItem>Twilio</ListItem>
+                </UnorderedList>
+              </ListItem>
             </UnorderedList>
           </Box>
         </FlexBox>
@@ -771,11 +763,20 @@ function App() {
       {/* Deployments */}
       <Slide backgroundColor="backgroundColor">
         <Heading>Web Deployments</Heading>
-        <OrderedList>CircleCI & Aptible</OrderedList>
         <OrderedList>
-          Github Actions <OrderedList>Running tests</OrderedList>
+          <ListItem>CircleCI & Aptible</ListItem>
+          <UnorderedList>
+            <ListItem>e2e tests (Cypress)</ListItem>
+            <ListItem>CI/CD (Cypress)</ListItem>
+            <ListItem>Sentry sourcemaps upload</ListItem>
+          </UnorderedList>
+          <ListItem>Preview Links -> Netlify</ListItem>
+          <UnorderedList>
+            <ListItem>
+              Links for QA, Staging, and Production Environments
+            </ListItem>
+          </UnorderedList>
         </OrderedList>
-        <OrderedList>Preview Links -> Netlify</OrderedList>
         <Notes>
           Same tooling around deployment with legacy EMR, Store and CX. pretty
           long deployment time which we'll work on the decrease. We'll take care
@@ -785,28 +786,7 @@ function App() {
           neat.
         </Notes>
       </Slide>
-      {/* Preview Links*/}
-      <Slide backgroundColor="backgroundColor">
-        <Heading>Mobile Preview links</Heading>
-        <OrderedList>
-          <ListItem>Insert Video Here</ListItem>
-        </OrderedList>
-        <Notes>
-          Behind vpm for internal users --- two vpn --- the fact that internal
-          users have @forhims.com and clinicians are not. If we they have
-          @forhims.com healthcare providers, telemedicine company (faciliator).
-          Single sign on. p81 it is either signle signon or indepedently
-          managed.com. 300 simultaneous. east of missipisi, west of missispi.
-          what albert and petr, they close it geographically binded. clinician
-          endpoint nordVPN for p81. --------------- --- pound check doctors
-          change their password, database for leaked passwords, we increase the
-          requirement of length and we got rid of that, when you change your
-          password, it doesn't allow you to add it --------------- backend for
-          vpn, downlaod the profile trust it. p81, downloading and independent
-          app and seems to be stable. that's looking forward put the backend
-          behind the VPN --
-        </Notes>
-      </Slide>
+
       <Slide backgroundColor="backgroundColor">
         <Heading>Mobile Deployments</Heading>
         <OrderedList>Codepush - OTA</OrderedList>
@@ -847,7 +827,35 @@ function App() {
           app and seems to be stable. that's looking forward put the backend
           behind the VPN --
         </Notes>
-      </Slide>{" "}
+      </Slide>
+      {/* Preview Links*/}
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Mobile Preview links</Heading>
+
+        <OrderedList>
+          <ListItem>Github Actions</ListItem>
+          <UnorderedList>
+            <ListItem>Running tests</ListItem>
+            <ListItem>Creating mobile preview links</ListItem>
+          </UnorderedList>
+          {/* <ListItem>Insert Video Here</ListItem> */}
+        </OrderedList>
+        <Notes>
+          Behind vpm for internal users --- two vpn --- the fact that internal
+          users have @forhims.com and clinicians are not. If we they have
+          @forhims.com healthcare providers, telemedicine company (faciliator).
+          Single sign on. p81 it is either signle signon or indepedently
+          managed.com. 300 simultaneous. east of missipisi, west of missispi.
+          what albert and petr, they close it geographically binded. clinician
+          endpoint nordVPN for p81. --------------- --- pound check doctors
+          change their password, database for leaked passwords, we increase the
+          requirement of length and we got rid of that, when you change your
+          password, it doesn't allow you to add it --------------- backend for
+          vpn, downlaod the profile trust it. p81, downloading and independent
+          app and seems to be stable. that's looking forward put the backend
+          behind the VPN --
+        </Notes>
+      </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>THE END</Heading>
         <FlexBox verticalAlign="center">
