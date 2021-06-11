@@ -190,7 +190,9 @@ function App() {
       <Slide backgroundColor="backgroundColor">
         <Heading>EMR UI Team</Heading>
         <FlexBox>
-          <OrderedList>Keeping up with 3 developers as 1 developer</OrderedList>
+          <OrderedList>
+            Bir iOS developer, 3 tane UI developer ile nasil bas edebilir
+          </OrderedList>
           <Image
             width="600"
             src="https://blog.puls.com/hs-fs/hubfs/puls-iphone-stuck-on-apple-logo-updates.jpg?width=3600&name=puls-iphone-stuck-on-apple-logo-updates.jpg"
@@ -207,7 +209,7 @@ function App() {
         </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Problem: How could we share data layer?</Heading>
+        <Heading>Problem: Data layer'i nasil paylasabiliriz?</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <UnorderedList>
             Save development hours with shared data layer
@@ -634,6 +636,28 @@ function App() {
         </Notes>
       </Slide>
       <Slide backgroundColor="bgSex">
+        <Heading>Folder Structure</Heading>
+        <FlexBox verticalAlign="center">
+          <iframe
+            width="560"
+            height="515"
+            src="https://www.youtube.com/embed/jPcirlPb3OM?playlist=jPcirlPb3OM&autoplay=1&rel=0&showinfo=0&controls=0&autohide=1&modestbranding=1&amp;wmode=transparent"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </FlexBox>
+        <Notes>
+          Monorepo architecture shares shared npm packages hoisted up to the
+          root level. You can still keep npm libraries in local level if it is
+          needed. mobile, web and assets don't have namespace since they don't
+          have any potential to be an npm library later. common, components, and
+          core has namespace as emr-clients which is good. I don't expect core
+          to be stand alone since it has all the business logic and data layer
+          in it. We didn't seperate redux/redux saga from composite UI Layer
+        </Notes>
+      </Slide>
+      <Slide backgroundColor="bgSex">
         <Heading>@emr-clients/components</Heading>
         <FlexBox justifyContent="space-between">
           <Box>
@@ -727,6 +751,34 @@ function App() {
           </Notes>
         </FlexBox>
       </Slide>
+
+      <Slide backgroundColor="bgSex">
+        <Heading>Styled Components</Heading>
+        <FlexBox justifyContent="space-between">
+          <Box>
+            <iframe
+              width="560"
+              height="515"
+              src="https://www.youtube.com/embed/mKmMdpV8SUE?autoplay=1&rel=0&showinfo=0&controls=0&autohide=1&modestbranding=1&amp;wmode=transparent"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </Box>
+          <Box>
+            <UnorderedList>
+              <ListItem>Dark/Light Theme</ListItem>
+              <ListItem>Spacing</ListItem>
+              <ListItem>Colors</ListItem>
+              <ListItem>Typography</ListItem>
+            </UnorderedList>
+          </Box>
+          <Notes>
+            This is a CSS in JS solution. It doesn't use seperate CSS files. We
+            inherited this from sotre.
+          </Notes>
+        </FlexBox>
+      </Slide>
       <Slide backgroundColor="bgSex">
         <Heading>General Performance</Heading>
         <FlexBox justifyContent="space-between">
@@ -786,7 +838,6 @@ function App() {
           neat.
         </Notes>
       </Slide>
-
       <Slide backgroundColor="backgroundColor">
         <Heading>Mobile Deployments</Heading>
         <OrderedList>Codepush - OTA</OrderedList>
@@ -838,6 +889,39 @@ function App() {
             <ListItem>Running tests</ListItem>
             <ListItem>Creating mobile preview links</ListItem>
           </UnorderedList>
+          {/* <ListItem>Insert Video Here</ListItem> */}
+        </OrderedList>
+        <Notes>
+          Behind vpm for internal users --- two vpn --- the fact that internal
+          users have @forhims.com and clinicians are not. If we they have
+          @forhims.com healthcare providers, telemedicine company (faciliator).
+          Single sign on. p81 it is either signle signon or indepedently
+          managed.com. 300 simultaneous. east of missipisi, west of missispi.
+          what albert and petr, they close it geographically binded. clinician
+          endpoint nordVPN for p81. --------------- --- pound check doctors
+          change their password, database for leaked passwords, we increase the
+          requirement of length and we got rid of that, when you change your
+          password, it doesn't allow you to add it --------------- backend for
+          vpn, downlaod the profile trust it. p81, downloading and independent
+          app and seems to be stable. that's looking forward put the backend
+          behind the VPN --
+        </Notes>
+      </Slide>
+      {/* Preview Links*/}
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Where to start after this talk</Heading>
+        <OrderedList>
+          <OrderedList>
+            <ListItem>https://www.omc345.com/</ListItem>
+            <ListItem>
+              https://github.com/brunolemos/react-native-web-monorepo
+              <UnorderedList>
+                <ListItem>
+                  https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej
+                </ListItem>
+              </UnorderedList>
+            </ListItem>
+          </OrderedList>
           {/* <ListItem>Insert Video Here</ListItem> */}
         </OrderedList>
         <Notes>
