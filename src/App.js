@@ -190,9 +190,7 @@ function App() {
       <Slide backgroundColor="backgroundColor">
         <Heading>EMR UI Team</Heading>
         <FlexBox>
-          <OrderedList>
-            Bir iOS developer, 3 tane UI developer ile nasil bas edebilir
-          </OrderedList>
+          <OrderedList>Keeping up with 3 developers as 1 developer</OrderedList>
           <Image
             width="600"
             src="https://blog.puls.com/hs-fs/hubfs/puls-iphone-stuck-on-apple-logo-updates.jpg?width=3600&name=puls-iphone-stuck-on-apple-logo-updates.jpg"
@@ -209,7 +207,7 @@ function App() {
         </Notes>
       </Slide>
       <Slide backgroundColor="backgroundColor">
-        <Heading>Problem: Data layer'i nasil paylasabiliriz?</Heading>
+        <Heading>Problem: How could we share data layer?</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-around">
           <UnorderedList>
             Save development hours with shared data layer
