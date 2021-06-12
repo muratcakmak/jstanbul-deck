@@ -950,6 +950,9 @@ function App() {
                 </ListItem>
               </UnorderedList>
             </ListItem>
+            <ListItem>
+              https://zaferayan.medium.com/react-native-web-nas%C4%B1l-kullan%C4%B1l%C4%B1r-monorepo-kavram%C4%B1-nedir-cc54e5ec34e6
+            </ListItem>
           </OrderedList>
           {/* <ListItem>Insert Video Here</ListItem> */}
         </OrderedList>
