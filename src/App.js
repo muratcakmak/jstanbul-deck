@@ -14,6 +14,7 @@ import {
   ListItem,
   Slide,
   Quote,
+  CodeSpan,
 } from "spectacle";
 import { TwitterFollowButton, TwitterTweetEmbed } from "react-twitter-embed";
 
@@ -22,6 +23,7 @@ import hermes from "./assets/hermes.gif";
 import cactus from "./assets/cactus.png";
 import uber from "./assets/uber.jpg";
 // import dho from "./assets/dho.jpg";
+import hims from "./assets/himsArch.png";
 
 const theme = {
   colors: {
@@ -155,6 +157,12 @@ function App() {
           data flow u olan ve bu componentlerin data degisimine react ettigi bir
           kutuphane
         </Notes>
+      </Slide>
+      <Slide backgroundColor="backgroundColor">
+        <Heading>Hims & Hers</Heading>
+        <FlexBox flexDirection="row">
+          <Image height="500" src={hims}></Image>
+        </FlexBox>
       </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Hermes</Heading>
@@ -456,6 +464,17 @@ function App() {
             src="https://necolas.github.io/react-native-web"
             style={{ height: 500, width: 600 }}
           ></iframe>
+        </FlexBox>
+      </Slide>
+      <Slide backgroundColor="bgSex">
+        <Heading>React Native for Web</Heading>
+        <FlexBox justifyContent="space-between">
+          <CodeSpan></CodeSpan>
+          <Box>
+            <UnorderedList>React Native API on the Web</UnorderedList>
+            <UnorderedList>{`<View /> instead of <div />`}</UnorderedList>
+            <UnorderedList>{`<Text /> instead of <h1 />`}</UnorderedList>
+          </Box>
         </FlexBox>
       </Slide>
       <Slide backgroundColor="bgSex">
