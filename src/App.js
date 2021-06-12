@@ -14,7 +14,7 @@ import {
   ListItem,
   Slide,
   Quote,
-  CodeSpan,
+  CodePane,
 } from "spectacle";
 import { TwitterFollowButton, TwitterTweetEmbed } from "react-twitter-embed";
 
@@ -468,15 +468,26 @@ function App() {
       </Slide>
       <Slide backgroundColor="bgSex">
         <Heading>React Native for Web</Heading>
-        <FlexBox justifyContent="space-between">
-          <CodeSpan></CodeSpan>
-          <Box>
-            <UnorderedList>React Native API on the Web</UnorderedList>
-            <UnorderedList>{`<View /> instead of <div />`}</UnorderedList>
-            <UnorderedList>{`<Text /> instead of <h1 />`}</UnorderedList>
-          </Box>
-        </FlexBox>
+
+        <CodePane language="javascript" highlightRanges={[1, 3]}>
+          {`
+        <Text>Merhaba</Text>
+      `}
+        </CodePane>
+        <br></br>
+        <br></br>
+        <br></br>
+        <CodePane language="javascript" highlightRanges={[1, 3]}>
+          {`
+   <div
+      dir="auto"
+      class="css-text-901oao">
+      Merhaba!
+   </div>
+      `}
+        </CodePane>
       </Slide>
+
       <Slide backgroundColor="bgSex">
         <Heading>Moving redux and redux-sagas</Heading>
         <FlexBox verticalAlign="center" justifyContent="space-arojnd">
