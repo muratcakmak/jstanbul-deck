@@ -345,29 +345,7 @@ function App() {
           and new ecosystem, their twilio support wasn't solid back then.
         </Notes>
       </Slide>
-      {/* Actual work */}
-      <Slide
-        transitionEffect={fancyTransition}
-        backgroundImage={"linear-gradient(to right, #8BB9AE, #C8DEE7)"}
-      >
-        <Heading>Remember the goals?</Heading>
-        <FlexBox verticalAlign="center" justifyContent="space-around">
-          <Box>
-            <UnorderedList>
-              <ListItem>At least 80% code sharing</ListItem>
-              <ListItem>Type safety</ListItem>
-              <ListItem>Hooks</ListItem>
-              <ListItem>CSS in JS</ListItem>
-              <ListItem>Solid Project Architecture</ListItem>
-              <ListItem>Stellar developer experience and efficiency</ListItem>
-              <ListItem>Linter rules</ListItem>
-            </UnorderedList>
-          </Box>
-          <Box>
-            <Image src="https://media.giphy.com/media/PnnIEAOjAgM85sy5Om/giphy.gif"></Image>
-          </Box>
-        </FlexBox>
-      </Slide>
+
       <Slide backgroundColor="bgSex">
         <Heading>React Native</Heading>
         <FlexBox justifyContent="space-between">
@@ -936,6 +914,29 @@ function App() {
         </Notes>
       </Slide>
       {/* Preview Links*/}
+      {/* Actual work */}
+      <Slide
+        transitionEffect={fancyTransition}
+        backgroundImage={"linear-gradient(to right, #8BB9AE, #C8DEE7)"}
+      >
+        <Heading>Remember the goals?</Heading>
+        <FlexBox verticalAlign="center" justifyContent="space-around">
+          <Box>
+            <UnorderedList>
+              <ListItem>At least 80% code sharing</ListItem>
+              <ListItem>Type safety</ListItem>
+              <ListItem>Hooks</ListItem>
+              <ListItem>CSS in JS</ListItem>
+              <ListItem>Solid Project Architecture</ListItem>
+              <ListItem>Stellar developer experience and efficiency</ListItem>
+              <ListItem>Linter rules</ListItem>
+            </UnorderedList>
+          </Box>
+          <Box>
+            <Image src="https://media.giphy.com/media/PnnIEAOjAgM85sy5Om/giphy.gif"></Image>
+          </Box>
+        </FlexBox>
+      </Slide>
       <Slide backgroundColor="backgroundColor">
         <Heading>Where to start after this talk</Heading>
         <OrderedList>
